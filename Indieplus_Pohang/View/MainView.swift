@@ -16,7 +16,12 @@ struct MainView: View {
             ScrollView(){
                 VStack {
                     ZStack{
-                        Rectangle().foregroundColor(.green)
+                        Rectangle()
+                            .fill(LinearGradient(
+                                gradient: .init(colors: [.green, .black ]),
+                                  startPoint: .init(x: 0.5, y: 0),
+                                endPoint: .init(x: 0.5, y: 0.8)
+                                ))
                         
                         VStack{
                             Image("Toplogo")
