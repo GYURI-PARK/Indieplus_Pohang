@@ -28,16 +28,31 @@ struct MainView: View {
                             
                             Image("Toplogo")
                             
+                            Spacer(minLength: 20)
+                            
                             titleText()
+                            
+                            Spacer(minLength: 40)
                             
                             posterView()
                             
-                            Divider().frame(width: 300)
+                            Spacer(minLength: 20)
+                            
                         }
                     }
                     
+                    
+                    Divider()
+                        .frame(width: 300, height: 2)
+                        .foregroundColor(Color(0xEF865B))
+                    
+                    Spacer(minLength: 30)
+                    
                     datePickerView()
                     
+                    Spacer(minLength: 30)
+                    
+                    MoviePickerView()
                 }
             }
         }
@@ -48,14 +63,15 @@ struct titleText: View {
     var body: some View {
         
         HStack{
-            
-            Text("초당 24프레임")
-                .font(.system(size: 15, weight: .semibold))
+        
+            let combinedText = Text("초당 24프레임")
+                .font(.system(size: 18, weight: .semibold))
+                .foregroundColor(.black) +
+                Text("의 꿈을 꾸는 곳")
+                .font(.system(size: 18, weight: .regular))
                 .foregroundColor(.black)
             
-            Text("의 꿈을 꾸는 곳")
-                .font(.system(size: 15, weight: .regular))
-                .foregroundColor(.black)
+            Text("\(combinedText)")
             
         }
     }
@@ -123,9 +139,7 @@ struct dateView: View {
     }
     
     var body: some View {
-        //let today = Date()
-        
-        ForEach(0..<7) { index in
+        ForEach(0..<8) { index in
             Spacer(minLength: 10)
             
             ZStack{
@@ -144,8 +158,6 @@ struct dateView: View {
                     
                     Text(dayToString(date: date))
                         .font(.system(size: 15, weight: .bold))
-//                    Text("오늘")
-//                        .font(.system(size: 15, weight: .bold))
                     
                 }
             }
