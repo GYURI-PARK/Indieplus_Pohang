@@ -50,6 +50,7 @@ struct MainView: View {
                         MoviePickerView()
                         
                         
+                        DailyReviewView()
                     }
                 }
             }
