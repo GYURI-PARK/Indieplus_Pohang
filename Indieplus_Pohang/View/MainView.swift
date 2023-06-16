@@ -10,19 +10,18 @@ import SwiftUI
 struct MainView: View {
     var body: some View {
         ZStack{
+            Rectangle()
+                .fill(LinearGradient(
+                    gradient: .init(colors: [Color(0xEF865B), .black ]),
+                    startPoint: .init(x: 0.5, y: 0),
+                    endPoint: .init(x: 0.5, y: 0.5)
+                ))
+                .ignoresSafeArea()
             
-            Color.black.ignoresSafeArea()
             
             ScrollView(showsIndicators: false){
-                VStack {
-                    ZStack{
-                        Rectangle()
-                            .fill(LinearGradient(
-                                gradient: .init(colors: [Color(0xEF865B), .black ]),
-                                startPoint: .init(x: 0.5, y: 0),
-                                endPoint: .init(x: 0.5, y: 0.8)
-                            ))
-                        
+                VStack(spacing: 50) {
+                    Group{
                         VStack{
                             Spacer(minLength: 20)
                             
@@ -39,20 +38,19 @@ struct MainView: View {
                             Spacer(minLength: 20)
                             
                         }
+                        
+                        Divider()
+                            .frame(width: 350, height: 1)
+                            .background(Color(0xEF865B))
+                        
+                        
+                        datePickerView()
+                        
+                        
+                        MoviePickerView()
+                        
+                        
                     }
-                    
-                    
-                    Divider()
-                        .frame(width: 300, height: 2)
-                        .foregroundColor(Color(0xEF865B))
-                    
-                    Spacer(minLength: 30)
-                    
-                    datePickerView()
-                    
-                    Spacer(minLength: 30)
-                    
-                    MoviePickerView()
                 }
             }
         }
