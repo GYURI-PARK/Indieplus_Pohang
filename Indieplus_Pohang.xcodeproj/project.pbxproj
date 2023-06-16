@@ -12,6 +12,7 @@
 		C1BED6772A3AF69A007B6A5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1BED6762A3AF69A007B6A5C /* Assets.xcassets */; };
 		C1BED67A2A3AF69A007B6A5C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1BED6792A3AF69A007B6A5C /* Preview Assets.xcassets */; };
 		C1BED6852A3AFD93007B6A5C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BED6842A3AFD93007B6A5C /* MainView.swift */; };
+		C1BED6882A3C2741007B6A5C /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BED6872A3C2741007B6A5C /* ColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		C1BED6762A3AF69A007B6A5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1BED6792A3AF69A007B6A5C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C1BED6842A3AFD93007B6A5C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		C1BED6872A3C2741007B6A5C /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 		C1BED6712A3AF699007B6A5C /* Indieplus_Pohang */ = {
 			isa = PBXGroup;
 			children = (
+				C1BED6862A3C2716007B6A5C /* Extension */,
 				C1BED6832A3AF83F007B6A5C /* Controller */,
 				C1BED6822A3AF834007B6A5C /* Model */,
 				C1BED6812A3AF827007B6A5C /* Resources */,
@@ -100,6 +103,14 @@
 			children = (
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		C1BED6862A3C2716007B6A5C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C1BED6872A3C2741007B6A5C /* ColorExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +186,7 @@
 				C1BED6752A3AF699007B6A5C /* ContentView.swift in Sources */,
 				C1BED6852A3AFD93007B6A5C /* MainView.swift in Sources */,
 				C1BED6732A3AF699007B6A5C /* Indieplus_PohangApp.swift in Sources */,
+				C1BED6882A3C2741007B6A5C /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
