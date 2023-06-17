@@ -15,7 +15,7 @@ struct DailyReviewView: View {
             
             ZStack{
                 RoundedRectangle(cornerRadius: 15)
-                    .foregroundColor(Color(0xEF865B))
+                    .foregroundColor(Color.main)
                     .opacity(0.5)
                     .frame(width: 330, height: 120)
             }
