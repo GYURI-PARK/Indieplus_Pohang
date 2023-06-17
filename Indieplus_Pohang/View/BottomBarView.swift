@@ -58,14 +58,6 @@ struct BottomBarView: View {
         }
         .offset(y: 400)
         
-//        Circle()
-//            .frame(width: 15)
-//            .foregroundColor(.clear)
-//            .overlay(
-//                Circle()
-//                    .strokeBorder(Color.main)
-//                    .frame(width: 15))
-        
     }
 }
 
