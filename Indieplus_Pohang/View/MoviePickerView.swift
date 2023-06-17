@@ -11,17 +11,15 @@ struct MoviePickerView: View {
     var body: some View {
         VStack(spacing: 30){
             ForEach(0..<4) { index in
-                HStack{
-                    Spacer()
-                    
+                HStack(spacing: 20){
                     VStack{
                         Circle()
                             .frame(width: 15)
                             .foregroundColor(.clear)
                             .overlay(
-                            Circle()
-                                .strokeBorder(Color.main)
-                                .frame(width: 15))
+                                Circle()
+                                    .strokeBorder(Color.main)
+                                    .frame(width: 15))
                         
                         
                         Rectangle()
@@ -29,18 +27,13 @@ struct MoviePickerView: View {
                             .foregroundColor(Color.main)
                         
                     }
-                    Spacer()
-                    
-                        // 영화시간 + 영화제목 + 예매하기 버튼
-                        MovieSummaryInfoView()
-                            .padding()
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 15)
-                                    .strokeBorder(Color.main)
-                                    .frame(width: 300, height: 80)
-                                )
-                    
-                    Spacer()
+                    MovieSummaryInfoView()
+                        .padding()
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 15)
+                                .strokeBorder(Color.main)
+                                .frame(width: 300, height: 80)
+                        )
                 }
             }
         }
@@ -48,6 +41,15 @@ struct MoviePickerView: View {
 }
 
 struct MovieSummaryInfoView: View {
+//    @State var selectedIndex = 0
+//
+//    let time = [
+//        "10 : 00",
+//        "13 : 30",
+//        "16 : 30",
+//        "19 : 30"
+//    ]
+    
     var body: some View {
         HStack(spacing: 10) {
             Text("10 : 00")

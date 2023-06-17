@@ -17,6 +17,7 @@
 		C1BED68C2A3CC663007B6A5C /* DailyReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BED68B2A3CC663007B6A5C /* DailyReviewView.swift */; };
 		C1BED68E2A3D8209007B6A5C /* FastTicketingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BED68D2A3D8209007B6A5C /* FastTicketingView.swift */; };
 		C1BED6902A3D835A007B6A5C /* ShapeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BED68F2A3D835A007B6A5C /* ShapeExtension.swift */; };
+		C1BED6922A3DCBB1007B6A5C /* BottomBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BED6912A3DCBB1007B6A5C /* BottomBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		C1BED68B2A3CC663007B6A5C /* DailyReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReviewView.swift; sourceTree = "<group>"; };
 		C1BED68D2A3D8209007B6A5C /* FastTicketingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastTicketingView.swift; sourceTree = "<group>"; };
 		C1BED68F2A3D835A007B6A5C /* ShapeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeExtension.swift; sourceTree = "<group>"; };
+		C1BED6912A3DCBB1007B6A5C /* BottomBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				C1BED6892A3C3CEA007B6A5C /* MoviePickerView.swift */,
 				C1BED68B2A3CC663007B6A5C /* DailyReviewView.swift */,
 				C1BED68D2A3D8209007B6A5C /* FastTicketingView.swift */,
+				C1BED6912A3DCBB1007B6A5C /* BottomBarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1BED6922A3DCBB1007B6A5C /* BottomBarView.swift in Sources */,
 				C1BED6752A3AF699007B6A5C /* ContentView.swift in Sources */,
 				C1BED68E2A3D8209007B6A5C /* FastTicketingView.swift in Sources */,
 				C1BED6852A3AFD93007B6A5C /* MainView.swift in Sources */,

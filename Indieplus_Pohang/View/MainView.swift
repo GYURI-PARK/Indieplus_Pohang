@@ -6,56 +6,62 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct MainView: View {
     var body: some View {
-        ZStack{
-            Rectangle()
-                .fill(LinearGradient(
-                    gradient: .init(colors: [Color.main, .black ]),
-                    startPoint: .init(x: 0.5, y: 0),
-                    endPoint: .init(x: 0.5, y: 0.5)
-                ))
-                .ignoresSafeArea()
-            
-            ScrollView(showsIndicators: false){
-                VStack(spacing: 50) {
-                    Group{
-                        VStack{
-                            Spacer(minLength: 20)
+        NavigationView{
+            ZStack{
+                Rectangle()
+                    .fill(LinearGradient(
+                        gradient: .init(colors: [Color.main, .black ]),
+                        startPoint: .init(x: 0.5, y: 0),
+                        endPoint: .init(x: 0.5, y: 0.5)
+                    ))
+                    .ignoresSafeArea()
+                
+                ScrollView(showsIndicators: false){
+                    VStack(spacing: 50) {
+                        Group{
+                            VStack{
+                                Spacer(minLength: 20)
+                                
+                                Image("Toplogo")
+                                
+                                Spacer(minLength: 20)
+                                
+                                titleText()
+                                
+                                Spacer(minLength: 40)
+                                
+                                posterView()
+                                
+                                Spacer(minLength: 20)
+                                
+                            }
                             
-                            Image("Toplogo")
+                            Divider()
+                                .frame(width: 350, height: 1)
+                                .background(Color.main)
                             
-                            Spacer(minLength: 20)
                             
-                            titleText()
+                            DatePickerView()
                             
-                            Spacer(minLength: 40)
                             
-                            posterView()
+                            MoviePickerView()
                             
-                            Spacer(minLength: 20)
                             
+                            DailyReviewView()
+                            
+                            Spacer(minLength: 45)
                         }
-                        
-                        Divider()
-                            .frame(width: 350, height: 1)
-                            .background(Color.main)
-                        
-                        
-                        DatePickerView()
-                        
-                        
-                        MoviePickerView()
-                        
-                        
-                        DailyReviewView()
                     }
                 }
+                
+                FastTicketingView()
+                
+                BottomBarView()
             }
-            
-            FastTicketingView()
-                .offset(x: 151, y: 340)
         }
     }
 }

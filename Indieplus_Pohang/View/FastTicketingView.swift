@@ -18,6 +18,7 @@ struct FastTicketingView: View {
             Text("빠른 예매")
                 .font(.system(size: 17, weight: .bold))
         }
+        .offset(x: 151, y: 318)
     }
 }
 
