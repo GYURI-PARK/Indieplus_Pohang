@@ -145,18 +145,25 @@ struct dateView: View {
                 Rectangle()
                     .frame(width: 60, height: 60)
                     .cornerRadius(10)
-                    .foregroundColor(Color(0xEF865B))
+                    .foregroundColor(.clear)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .strokeBorder(Color(0xEF865B))
+                            .frame(width: 60, height: 60)
+                        )
                 
-                VStack{
+                VStack(spacing: 2){
             
                     let date = Calendar.current.date(byAdding: .day, value: index, to: today)!
                     
                     Text(dateToString(date: date))
                         .font(.system(size: 20, weight: .bold))
+                        .foregroundColor(Color(0xEF865B))
                       
                     
                     Text(dayToString(date: date))
                         .font(.system(size: 15, weight: .bold))
+                        .foregroundColor(Color(0xEF865B))
                     
                 }
             }

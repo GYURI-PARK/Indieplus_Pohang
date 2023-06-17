@@ -17,11 +17,15 @@ struct MoviePickerView: View {
                     VStack{
                         Circle()
                             .frame(width: 15)
-                            .foregroundColor(Color(0xEF865B))
+                            .foregroundColor(.clear)
+                            .overlay(
+                            Circle()
+                                .strokeBorder(Color(0xEF865B))
+                                .frame(width: 15))
                         
                         
                         Rectangle()
-                            .frame(width: 1, height: 50)
+                            .frame(width: 1, height: 60)
                             .foregroundColor(Color(0xEF865B))
                         
                     }
@@ -45,22 +49,28 @@ struct MoviePickerView: View {
 
 struct MovieSummaryInfoView: View {
     var body: some View {
-        HStack {
+        HStack(spacing: 10) {
             Text("10 : 00")
                 .foregroundColor(.white)
+                .font(.system(size: 18, weight: .semibold))
+                .padding(.trailing, 3)
             
-            VStack(alignment: .leading){
+            
+            
+            VStack(alignment: .leading, spacing: 8){
                 Text("슬픔의 삼각형")
-                    .font(.system(size: 15))
+                    .font(.system(size: 18, weight: .medium))
                     .foregroundColor(.white)
                 
                 Text("Triangle of Sadness, 2023")
                     .font(.system(size: 12))
+                    .opacity(0.7)
                     .foregroundColor(.white)
             }
             
             Text("예매\n하기")
                 .foregroundColor(.white)
+                .padding(.leading)
         }
     }
 }
