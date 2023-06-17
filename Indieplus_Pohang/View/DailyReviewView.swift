@@ -17,7 +17,7 @@ struct DailyReviewView: View {
                 RoundedRectangle(cornerRadius: 15)
                     .foregroundColor(Color.main)
                     .opacity(0.5)
-                    .frame(width: 330, height: 120)
+                    .frame(width: 330, height: 100)
             }
         }
     }

@@ -18,7 +18,6 @@ struct MainView: View {
                 ))
                 .ignoresSafeArea()
             
-            
             ScrollView(showsIndicators: false){
                 VStack(spacing: 50) {
                     Group{
@@ -44,7 +43,7 @@ struct MainView: View {
                             .background(Color.main)
                         
                         
-                        datePickerView()
+                        DatePickerView()
                         
                         
                         MoviePickerView()
@@ -54,6 +53,9 @@ struct MainView: View {
                     }
                 }
             }
+            
+            FastTicketingView()
+                .offset(x: 151, y: 340)
         }
     }
 }
@@ -98,13 +100,13 @@ struct posterView: View {
     }
 }
 
-struct datePickerView: View {
+struct DatePickerView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack{
                 Spacer()
                 
-                dateView()
+                DateView()
                 
                 Spacer()
             }
@@ -113,7 +115,7 @@ struct datePickerView: View {
 }
 
 // datePicker안에 있는 사각형
-struct dateView: View {
+struct DateView: View {
     let today = Date()
     // 날짜 변환
     func dateToString(date: Date) -> String {

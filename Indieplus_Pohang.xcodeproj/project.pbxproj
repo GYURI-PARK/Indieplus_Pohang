@@ -15,6 +15,8 @@
 		C1BED6882A3C2741007B6A5C /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BED6872A3C2741007B6A5C /* ColorExtension.swift */; };
 		C1BED68A2A3C3CEA007B6A5C /* MoviePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BED6892A3C3CEA007B6A5C /* MoviePickerView.swift */; };
 		C1BED68C2A3CC663007B6A5C /* DailyReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BED68B2A3CC663007B6A5C /* DailyReviewView.swift */; };
+		C1BED68E2A3D8209007B6A5C /* FastTicketingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BED68D2A3D8209007B6A5C /* FastTicketingView.swift */; };
+		C1BED6902A3D835A007B6A5C /* ShapeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BED68F2A3D835A007B6A5C /* ShapeExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		C1BED6872A3C2741007B6A5C /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		C1BED6892A3C3CEA007B6A5C /* MoviePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePickerView.swift; sourceTree = "<group>"; };
 		C1BED68B2A3CC663007B6A5C /* DailyReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReviewView.swift; sourceTree = "<group>"; };
+		C1BED68D2A3D8209007B6A5C /* FastTicketingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastTicketingView.swift; sourceTree = "<group>"; };
+		C1BED68F2A3D835A007B6A5C /* ShapeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 				C1BED6842A3AFD93007B6A5C /* MainView.swift */,
 				C1BED6892A3C3CEA007B6A5C /* MoviePickerView.swift */,
 				C1BED68B2A3CC663007B6A5C /* DailyReviewView.swift */,
+				C1BED68D2A3D8209007B6A5C /* FastTicketingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				C1BED6872A3C2741007B6A5C /* ColorExtension.swift */,
+				C1BED68F2A3D835A007B6A5C /* ShapeExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -190,9 +196,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1BED6752A3AF699007B6A5C /* ContentView.swift in Sources */,
+				C1BED68E2A3D8209007B6A5C /* FastTicketingView.swift in Sources */,
 				C1BED6852A3AFD93007B6A5C /* MainView.swift in Sources */,
 				C1BED68C2A3CC663007B6A5C /* DailyReviewView.swift in Sources */,
 				C1BED6732A3AF699007B6A5C /* Indieplus_PohangApp.swift in Sources */,
+				C1BED6902A3D835A007B6A5C /* ShapeExtension.swift in Sources */,
 				C1BED6882A3C2741007B6A5C /* ColorExtension.swift in Sources */,
 				C1BED68A2A3C3CEA007B6A5C /* MoviePickerView.swift in Sources */,
 			);
