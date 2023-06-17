@@ -12,7 +12,7 @@ struct MainView: View {
         ZStack{
             Rectangle()
                 .fill(LinearGradient(
-                    gradient: .init(colors: [Color(0xEF865B), .black ]),
+                    gradient: .init(colors: [Color.main, .black ]),
                     startPoint: .init(x: 0.5, y: 0),
                     endPoint: .init(x: 0.5, y: 0.5)
                 ))
@@ -41,7 +41,7 @@ struct MainView: View {
                         
                         Divider()
                             .frame(width: 350, height: 1)
-                            .background(Color(0xEF865B))
+                            .background(Color.main)
                         
                         
                         datePickerView()
@@ -148,7 +148,7 @@ struct dateView: View {
                     .foregroundColor(.clear)
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
-                            .strokeBorder(Color(0xEF865B))
+                            .strokeBorder(Color.main)
                             .frame(width: 60, height: 60)
                         )
                 
@@ -158,12 +158,12 @@ struct dateView: View {
                     
                     Text(dateToString(date: date))
                         .font(.system(size: 20, weight: .bold))
-                        .foregroundColor(Color(0xEF865B))
+                        .foregroundColor(Color.main)
                       
                     
                     Text(dayToString(date: date))
                         .font(.system(size: 15, weight: .bold))
-                        .foregroundColor(Color(0xEF865B))
+                        .foregroundColor(Color.main)
                     
                 }
             }

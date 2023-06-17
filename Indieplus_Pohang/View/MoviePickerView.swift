@@ -20,13 +20,13 @@ struct MoviePickerView: View {
                             .foregroundColor(.clear)
                             .overlay(
                             Circle()
-                                .strokeBorder(Color(0xEF865B))
+                                .strokeBorder(Color.main)
                                 .frame(width: 15))
                         
                         
                         Rectangle()
                             .frame(width: 1, height: 60)
-                            .foregroundColor(Color(0xEF865B))
+                            .foregroundColor(Color.main)
                         
                     }
                     Spacer()
@@ -36,7 +36,7 @@ struct MoviePickerView: View {
                             .padding()
                             .overlay(
                                 RoundedRectangle(cornerRadius: 15)
-                                    .strokeBorder(Color(0xEF865B))
+                                    .strokeBorder(Color.main)
                                     .frame(width: 300, height: 80)
                                 )
                     

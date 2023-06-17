@@ -18,3 +18,7 @@ extension Color {
         )
     }
 }
+
+extension Color {
+    static let main = Color(0xEF865B)
+}
