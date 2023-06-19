@@ -22,8 +22,8 @@ struct DatePickerView: View {
 }
 
 struct DateView: View {
-    @StateObject private var viewModel = DateViewModel()
     let today = Date()
+    
     // 날짜 변환
     func dateToString(date: Date) -> String {
         let dateFormatter = DateFormatter()
@@ -46,12 +46,25 @@ struct DateView: View {
         }
     }
     
+    // 휴무일인지 판단
+    func isTodayHoliday(date: Date) -> Bool {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.dateFormat = "E"
+        
+        if dateFormatter.string(from: date) == "월" || dateFormatter.string(from: date) == "화" {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     var body: some View {
         ForEach(0..<12) { index in
             
             let date = Calendar.current.date(byAdding: .day, value: index, to: today)!
             
-            if !viewModel.isTodayHoliday(date: date) {
+            if !isTodayHoliday(date: date) {
                 Spacer(minLength: 10)
                 ZStack{
                     Rectangle()
