@@ -8,6 +8,21 @@
 import SwiftUI
 
 struct MoviePickerView: View {
+    @State var selectedTime = ""
+    
+    func presentingDifferentTime(index: Int) -> String {
+        if index == 0 {
+            return "10 : 00"
+        } else if index == 1 {
+            return "13 : 30"
+        } else if index == 2 {
+            return "16 : 30"
+        } else if index == 3 {
+            return "19 : 30"
+        }
+        return ""
+    }
+    
     var body: some View {
         VStack(spacing: 30){
             ForEach(0..<4) { index in
@@ -27,7 +42,7 @@ struct MoviePickerView: View {
                             .foregroundColor(Color.main)
                         
                     }
-                    MovieSummaryInfoView()
+                    MovieSummaryInfoView(selectedTime: presentingDifferentTime(index: index))
                         .padding()
                         .overlay(
                             RoundedRectangle(cornerRadius: 15)
@@ -41,19 +56,12 @@ struct MoviePickerView: View {
 }
 
 struct MovieSummaryInfoView: View {
-//    @State var selectedIndex = 0
-//
-//    let time = [
-//        "10 : 00",
-//        "13 : 30",
-//        "16 : 30",
-//        "19 : 30"
-//    ]
     
+    var selectedTime: String
     
     var body: some View {
         HStack(spacing: 10) {
-            Text("10 : 00")
+            Text("\(selectedTime)")
                 .foregroundColor(.white)
                 .font(.system(size: 18, weight: .semibold))
                 .padding(.trailing, 3)
