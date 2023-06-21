@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct DatePickerView: View {
+    @State var selectedIndex: Int = 0
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack{
                 Spacer()
                 
+                //DateView(selectedIndex: $selectedIndex)
                 DateView()
                 
                 Spacer()
@@ -23,6 +25,7 @@ struct DatePickerView: View {
 
 struct DateView: View {
     let today = Date()
+    @State var selectedIndex = 0
     
     // 날짜 변환
     func dateToString(date: Date) -> String {
@@ -66,28 +69,32 @@ struct DateView: View {
             
             if !isTodayHoliday(date: date) {
                 Spacer(minLength: 10)
-                ZStack{
-                    Rectangle()
-                        .frame(width: 60, height: 60)
-                        .cornerRadius(10)
-                        .foregroundColor(.clear)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 10)
-                                .strokeBorder(Color.main)
-                                .frame(width: 60, height: 60)
-                        )
-                    
-                    VStack(spacing: 2){
+                Button {
+                    selectedIndex = index
+                } label: {
+                    ZStack{
+                        Rectangle()
+                            .frame(width: 60, height: 60)
+                            .cornerRadius(10)
+                            .foregroundColor(index == selectedIndex ? .main : .clear)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .strokeBorder(Color.main)
+                                    .frame(width: 60, height: 60)
+                            )
                         
-                        Text(dateToString(date: date))
-                            .font(.system(size: 20, weight: .bold))
-                            .foregroundColor(Color.main)
-                        
-                        
-                        Text(dayToString(date: date))
-                            .font(.system(size: 15, weight: .bold))
-                            .foregroundColor(Color.main)
-                        
+                        VStack(spacing: 2){
+                            
+                            Text(dateToString(date: date))
+                                .font(.system(size: 20, weight: .bold))
+                                .foregroundColor(index == selectedIndex ? .black : Color.main)
+                            
+                            
+                            Text(dayToString(date: date))
+                                .font(.system(size: 15, weight: .bold))
+                                .foregroundColor(index == selectedIndex ? .black : Color.main)
+                            
+                        }
                     }
                 }
                 Spacer(minLength: 10)

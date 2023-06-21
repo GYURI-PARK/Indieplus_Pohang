@@ -50,6 +50,7 @@ struct MovieSummaryInfoView: View {
 //        "19 : 30"
 //    ]
     
+    
     var body: some View {
         HStack(spacing: 10) {
             Text("10 : 00")
@@ -60,19 +61,25 @@ struct MovieSummaryInfoView: View {
             
             
             VStack(alignment: .leading, spacing: 8){
-                Text("슬픔의 삼각형")
-                    .font(.system(size: 18, weight: .medium))
-                    .foregroundColor(.white)
+                Button{
+                    
+                } label: {
+                    Text("슬픔의 삼각형")
+                        .font(.system(size: 18, weight: .medium))
+                        .foregroundColor(.white)
+                }
                 
                 Text("Triangle of Sadness, 2023")
                     .font(.system(size: 12))
                     .opacity(0.7)
                     .foregroundColor(.white)
             }
-            
-            Text("예매\n하기")
-                .foregroundColor(.white)
-                .padding(.leading)
+            Button {
+            } label: {
+                Text("예매\n하기")
+                    .foregroundColor(.white)
+                    .padding(.leading)
+            }
         }
     }
 }
