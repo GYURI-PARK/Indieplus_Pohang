@@ -20,9 +20,12 @@
 		C1BED6922A3DCBB1007B6A5C /* BottomBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BED6912A3DCBB1007B6A5C /* BottomBarView.swift */; };
 		C1BED6962A3E2651007B6A5C /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BED6952A3E2651007B6A5C /* DatePickerView.swift */; };
 		C1BED6982A3E268C007B6A5C /* PosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BED6972A3E268C007B6A5C /* PosterView.swift */; };
+		FFB88FA0CBDFF01ABAF394E3 /* Pods_Indieplus_Pohang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D797F750EC5C4B499D4F1E /* Pods_Indieplus_Pohang.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F319E6930E28FB7A798DD6C /* Pods-Indieplus_Pohang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Indieplus_Pohang.debug.xcconfig"; path = "Target Support Files/Pods-Indieplus_Pohang/Pods-Indieplus_Pohang.debug.xcconfig"; sourceTree = "<group>"; };
+		463E30FBC69F18F89F9B9DBD /* Pods-Indieplus_Pohang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Indieplus_Pohang.release.xcconfig"; path = "Target Support Files/Pods-Indieplus_Pohang/Pods-Indieplus_Pohang.release.xcconfig"; sourceTree = "<group>"; };
 		C1BED66F2A3AF699007B6A5C /* Indieplus_Pohang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Indieplus_Pohang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1BED6722A3AF699007B6A5C /* Indieplus_PohangApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indieplus_PohangApp.swift; sourceTree = "<group>"; };
 		C1BED6742A3AF699007B6A5C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -37,6 +40,7 @@
 		C1BED6912A3DCBB1007B6A5C /* BottomBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarView.swift; sourceTree = "<group>"; };
 		C1BED6952A3E2651007B6A5C /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		C1BED6972A3E268C007B6A5C /* PosterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterView.swift; sourceTree = "<group>"; };
+		F6D797F750EC5C4B499D4F1E /* Pods_Indieplus_Pohang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Indieplus_Pohang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFB88FA0CBDFF01ABAF394E3 /* Pods_Indieplus_Pohang.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +60,8 @@
 			children = (
 				C1BED6712A3AF699007B6A5C /* Indieplus_Pohang */,
 				C1BED6702A3AF699007B6A5C /* Products */,
+				CBFB92A660B0EF4FD21D884C /* Pods */,
+				CAC9651096297022BEA23767 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,6 +141,24 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		CAC9651096297022BEA23767 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F6D797F750EC5C4B499D4F1E /* Pods_Indieplus_Pohang.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CBFB92A660B0EF4FD21D884C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2F319E6930E28FB7A798DD6C /* Pods-Indieplus_Pohang.debug.xcconfig */,
+				463E30FBC69F18F89F9B9DBD /* Pods-Indieplus_Pohang.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,9 +166,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1BED67D2A3AF69A007B6A5C /* Build configuration list for PBXNativeTarget "Indieplus_Pohang" */;
 			buildPhases = (
+				84053CA5E61787316D158184 /* [CP] Check Pods Manifest.lock */,
 				C1BED66B2A3AF699007B6A5C /* Sources */,
 				C1BED66C2A3AF699007B6A5C /* Frameworks */,
 				C1BED66D2A3AF699007B6A5C /* Resources */,
+				627008A66D4EA36B80FE294D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -198,6 +225,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		627008A66D4EA36B80FE294D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Indieplus_Pohang/Pods-Indieplus_Pohang-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Indieplus_Pohang/Pods-Indieplus_Pohang-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Indieplus_Pohang/Pods-Indieplus_Pohang-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84053CA5E61787316D158184 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Indieplus_Pohang-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C1BED66B2A3AF699007B6A5C /* Sources */ = {
@@ -337,6 +406,7 @@
 		};
 		C1BED67E2A3AF69A007B6A5C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F319E6930E28FB7A798DD6C /* Pods-Indieplus_Pohang.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -365,6 +435,7 @@
 		};
 		C1BED67F2A3AF69A007B6A5C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 463E30FBC69F18F89F9B9DBD /* Pods-Indieplus_Pohang.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

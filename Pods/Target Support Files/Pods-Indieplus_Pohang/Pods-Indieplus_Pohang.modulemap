@@ -1,0 +1,6 @@
+framework module Pods_Indieplus_Pohang {
+  umbrella header "Pods-Indieplus_Pohang-umbrella.h"
+
+  export *
+  module * { export * }
+}
