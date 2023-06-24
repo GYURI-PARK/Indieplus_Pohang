@@ -20,6 +20,9 @@
 		C1BED6922A3DCBB1007B6A5C /* BottomBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BED6912A3DCBB1007B6A5C /* BottomBarView.swift */; };
 		C1BED6962A3E2651007B6A5C /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BED6952A3E2651007B6A5C /* DatePickerView.swift */; };
 		C1BED6982A3E268C007B6A5C /* PosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BED6972A3E268C007B6A5C /* PosterView.swift */; };
+		C1BED69A2A45FB43007B6A5C /* MoviePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BED6992A45FB43007B6A5C /* MoviePickerViewController.swift */; };
+		C1BED69C2A46BDB9007B6A5C /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BED69B2A46BDB9007B6A5C /* Review.swift */; };
+		C1BED6E32A46F440007B6A5C /* WrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BED6E22A46F440007B6A5C /* WrapperView.swift */; };
 		FFB88FA0CBDFF01ABAF394E3 /* Pods_Indieplus_Pohang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D797F750EC5C4B499D4F1E /* Pods_Indieplus_Pohang.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +43,9 @@
 		C1BED6912A3DCBB1007B6A5C /* BottomBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarView.swift; sourceTree = "<group>"; };
 		C1BED6952A3E2651007B6A5C /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		C1BED6972A3E268C007B6A5C /* PosterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterView.swift; sourceTree = "<group>"; };
+		C1BED6992A45FB43007B6A5C /* MoviePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePickerViewController.swift; sourceTree = "<group>"; };
+		C1BED69B2A46BDB9007B6A5C /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		C1BED6E22A46F440007B6A5C /* WrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapperView.swift; sourceTree = "<group>"; };
 		F6D797F750EC5C4B499D4F1E /* Pods_Indieplus_Pohang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Indieplus_Pohang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -107,6 +113,7 @@
 				C1BED6912A3DCBB1007B6A5C /* BottomBarView.swift */,
 				C1BED6952A3E2651007B6A5C /* DatePickerView.swift */,
 				C1BED6972A3E268C007B6A5C /* PosterView.swift */,
+				C1BED6E22A46F440007B6A5C /* WrapperView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -114,6 +121,7 @@
 		C1BED6812A3AF827007B6A5C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C1BED69B2A46BDB9007B6A5C /* Review.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -128,6 +136,7 @@
 		C1BED6832A3AF83F007B6A5C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C1BED6992A45FB43007B6A5C /* MoviePickerViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -155,7 +164,6 @@
 				2F319E6930E28FB7A798DD6C /* Pods-Indieplus_Pohang.debug.xcconfig */,
 				463E30FBC69F18F89F9B9DBD /* Pods-Indieplus_Pohang.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -276,10 +284,13 @@
 				C1BED6922A3DCBB1007B6A5C /* BottomBarView.swift in Sources */,
 				C1BED6752A3AF699007B6A5C /* ContentView.swift in Sources */,
 				C1BED6962A3E2651007B6A5C /* DatePickerView.swift in Sources */,
+				C1BED69A2A45FB43007B6A5C /* MoviePickerViewController.swift in Sources */,
 				C1BED68E2A3D8209007B6A5C /* FastTicketingView.swift in Sources */,
 				C1BED6852A3AFD93007B6A5C /* MainView.swift in Sources */,
+				C1BED6E32A46F440007B6A5C /* WrapperView.swift in Sources */,
 				C1BED68C2A3CC663007B6A5C /* DailyReviewView.swift in Sources */,
 				C1BED6732A3AF699007B6A5C /* Indieplus_PohangApp.swift in Sources */,
+				C1BED69C2A46BDB9007B6A5C /* Review.swift in Sources */,
 				C1BED6902A3D835A007B6A5C /* ShapeExtension.swift in Sources */,
 				C1BED6882A3C2741007B6A5C /* ColorExtension.swift in Sources */,
 				C1BED68A2A3C3CEA007B6A5C /* MoviePickerView.swift in Sources */,
