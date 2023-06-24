@@ -83,7 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				C1BED6862A3C2716007B6A5C /* Extension */,
-				C1BED6832A3AF83F007B6A5C /* Controller */,
+				C1BED6832A3AF83F007B6A5C /* VIewController */,
 				C1BED6822A3AF834007B6A5C /* Model */,
 				C1BED6812A3AF827007B6A5C /* Resources */,
 				C1BED6802A3AF820007B6A5C /* View */,
@@ -133,12 +133,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		C1BED6832A3AF83F007B6A5C /* Controller */ = {
+		C1BED6832A3AF83F007B6A5C /* VIewController */ = {
 			isa = PBXGroup;
 			children = (
 				C12630A92A471CDA00F98E2A /* MoviePickerViewController.swift */,
 			);
-			path = Controller;
+			path = VIewController;
 			sourceTree = "<group>";
 		};
 		C1BED6862A3C2716007B6A5C /* Extension */ = {

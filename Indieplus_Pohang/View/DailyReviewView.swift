@@ -12,13 +12,35 @@ struct DailyReviewView: View {
         VStack(alignment: .leading){
             Text("Daily REVIEW")
                 .foregroundColor(.white)
+                .font(.system(size: 18, weight: .semibold))
             
             ZStack{
                 RoundedRectangle(cornerRadius: 15)
                     .foregroundColor(Color.main)
                     .opacity(0.5)
                     .frame(width: 330, height: 100)
+                
+                RandomReviewView()
+                    .frame(width: 310, height: 90)
             }
+        }
+    }
+}
+
+struct RandomReviewView: View {
+    var body: some View {
+        let review = ReviewDataModel.instance.reviews.randomElement()
+        let index = ReviewDataModel.instance.reviews.firstIndex(of: review ?? "")
+        let movie = ReviewDataModel.instance.movies[index ?? 0]
+        
+        VStack{
+            Text(review ?? "")
+                .foregroundColor(.white)
+                .multilineTextAlignment(.center)
+                .padding(5)
+            Text(movie)
+                .foregroundColor(.white)
+                .font(.system(size: 13))
         }
     }
 }
