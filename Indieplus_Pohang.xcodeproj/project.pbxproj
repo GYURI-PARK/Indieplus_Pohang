@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C12630AA2A471CDA00F98E2A /* MovieTitlePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12630A92A471CDA00F98E2A /* MovieTitlePickerController.swift */; };
+		C12630AC2A471D0200F98E2A /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12630AB2A471D0200F98E2A /* Review.swift */; };
+		C12630AE2A471D1400F98E2A /* WrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12630AD2A471D1400F98E2A /* WrapperView.swift */; };
+		C12630B02A48B75600F98E2A /* MovieTitlePickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12630AF2A48B75600F98E2A /* MovieTitlePickerModel.swift */; };
 		C1BED6732A3AF699007B6A5C /* Indieplus_PohangApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BED6722A3AF699007B6A5C /* Indieplus_PohangApp.swift */; };
 		C1BED6752A3AF699007B6A5C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BED6742A3AF699007B6A5C /* ContentView.swift */; };
 		C1BED6772A3AF69A007B6A5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1BED6762A3AF69A007B6A5C /* Assets.xcassets */; };
@@ -29,6 +33,10 @@
 /* Begin PBXFileReference section */
 		2F319E6930E28FB7A798DD6C /* Pods-Indieplus_Pohang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Indieplus_Pohang.debug.xcconfig"; path = "Target Support Files/Pods-Indieplus_Pohang/Pods-Indieplus_Pohang.debug.xcconfig"; sourceTree = "<group>"; };
 		463E30FBC69F18F89F9B9DBD /* Pods-Indieplus_Pohang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Indieplus_Pohang.release.xcconfig"; path = "Target Support Files/Pods-Indieplus_Pohang/Pods-Indieplus_Pohang.release.xcconfig"; sourceTree = "<group>"; };
+		C12630A92A471CDA00F98E2A /* MovieTitlePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieTitlePickerController.swift; path = Indieplus_Pohang/View/MovieTitlePickerController.swift; sourceTree = SOURCE_ROOT; };
+		C12630AB2A471D0200F98E2A /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Review.swift; path = Indieplus_Pohang/View/Review.swift; sourceTree = SOURCE_ROOT; };
+		C12630AD2A471D1400F98E2A /* WrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapperView.swift; sourceTree = "<group>"; };
+		C12630AF2A48B75600F98E2A /* MovieTitlePickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTitlePickerModel.swift; sourceTree = "<group>"; };
 		C1BED66F2A3AF699007B6A5C /* Indieplus_Pohang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Indieplus_Pohang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1BED6722A3AF699007B6A5C /* Indieplus_PohangApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indieplus_PohangApp.swift; sourceTree = "<group>"; };
 		C1BED6742A3AF699007B6A5C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -113,7 +121,7 @@
 				C1BED6912A3DCBB1007B6A5C /* BottomBarView.swift */,
 				C1BED6952A3E2651007B6A5C /* DatePickerView.swift */,
 				C1BED6972A3E268C007B6A5C /* PosterView.swift */,
-				C1BED6E22A46F440007B6A5C /* WrapperView.swift */,
+				C12630AD2A471D1400F98E2A /* WrapperView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -121,7 +129,7 @@
 		C1BED6812A3AF827007B6A5C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C1BED69B2A46BDB9007B6A5C /* Review.swift */,
+				C12630AB2A471D0200F98E2A /* Review.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -129,6 +137,7 @@
 		C1BED6822A3AF834007B6A5C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C12630AF2A48B75600F98E2A /* MovieTitlePickerModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -136,7 +145,7 @@
 		C1BED6832A3AF83F007B6A5C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C1BED6992A45FB43007B6A5C /* MoviePickerViewController.swift */,
+				C12630A92A471CDA00F98E2A /* MovieTitlePickerController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -283,18 +292,16 @@
 			files = (
 				C1BED6922A3DCBB1007B6A5C /* BottomBarView.swift in Sources */,
 				C1BED6752A3AF699007B6A5C /* ContentView.swift in Sources */,
+				C12630B02A48B75600F98E2A /* MovieTitlePickerModel.swift in Sources */,
 				C1BED6962A3E2651007B6A5C /* DatePickerView.swift in Sources */,
-				C1BED69A2A45FB43007B6A5C /* MoviePickerViewController.swift in Sources */,
+				C12630AA2A471CDA00F98E2A /* MovieTitlePickerController.swift in Sources */,
 				C1BED68E2A3D8209007B6A5C /* FastTicketingView.swift in Sources */,
 				C1BED6852A3AFD93007B6A5C /* MainView.swift in Sources */,
-				C1BED6E32A46F440007B6A5C /* WrapperView.swift in Sources */,
+				C12630AE2A471D1400F98E2A /* WrapperView.swift in Sources */,
 				C1BED68C2A3CC663007B6A5C /* DailyReviewView.swift in Sources */,
 				C1BED6732A3AF699007B6A5C /* Indieplus_PohangApp.swift in Sources */,
-				C1BED69C2A46BDB9007B6A5C /* Review.swift in Sources */,
-				C1BED6902A3D835A007B6A5C /* ShapeExtension.swift in Sources */,
-				C1BED6882A3C2741007B6A5C /* ColorExtension.swift in Sources */,
-				C1BED68A2A3C3CEA007B6A5C /* MoviePickerView.swift in Sources */,
-				C1BED6982A3E268C007B6A5C /* PosterView.swift in Sources */,
+				C12630AC2A471D0200F98E2A /* Review.swift in Sources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

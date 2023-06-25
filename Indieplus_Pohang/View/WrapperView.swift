@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct WrapperView: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> MoviePickerViewController {
-        return MoviePickerViewController()
+    func makeUIViewController(context: Context) -> MovieTitlePickerController {
+        return MovieTitlePickerController()
     }
-    
-    func updateUIViewController(_ uiViewController: MoviePickerViewController, context: Context) {
+
+    func updateUIViewController(_ uiViewController: MovieTitlePickerController, context: Context) {
         // Update the view controller if needed
     }
 }
+
