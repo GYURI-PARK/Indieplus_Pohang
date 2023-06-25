@@ -11,8 +11,8 @@ import SwiftUI
 struct Indieplus_PohangApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
-          //  WrapperView()
+          //  MainView()
+            WrapperView()
         }
     }
 }

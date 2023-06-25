@@ -15,6 +15,9 @@ class MoviePickerViewController: UIViewController {
         super.viewDidLoad()
         self.fetchHTMLParsingResultWill()
     }
+    
+    var uniqueTitles = Set<String>()
+//    var targetMovieTitles = Set<String>()
 
     func fetchHTMLParsingResultWill() {
         
@@ -26,12 +29,33 @@ class MoviePickerViewController: UIViewController {
             let doc: Document = try SwiftSoup.parse(html)
               
             let movieTitles: Elements = try doc.select(".left").select("span") //.은 클래스
+           
+            
             for i in movieTitles {
-                print("title: ", try i.text())
+                let title = try i.text()
+                uniqueTitles.insert(title)
+
             }
+            let extractedTitles = extractMovieTitle(from: uniqueTitles)
+            print(extractedTitles)
+            
             
         } catch let error {
             print("Error : \(error)")
         }
+    }
+    
+    // MARK: 영화 제목만 뽑기
+    func extractMovieTitle(from titles: Set<String>) -> [String] {
+        let targetCharacter: Character = "["
+        var extractedTitles: [String] = []
+     
+        for title in titles {
+            if let index = title.firstIndex(of: targetCharacter) {
+                let extractedString = String(title[..<index])
+                extractedTitles.append(extractedString)
+            }
+        }
+        return extractedTitles
     }
 }
