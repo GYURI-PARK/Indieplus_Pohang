@@ -1,8 +1,10 @@
-# Indieplus_Pohang
+//
+//  MoviePickerViewController.swift
+//  Indieplus_Pohang
+//
+//  Created by GYURI PARK on 2023/06/24.
+//
 
-## SwiftSoap로 웹 크롤링하기 
-
-```swift
 import Foundation
 import SwiftSoup
 import UIKit
@@ -34,5 +36,3 @@ class MoviePickerViewController: UIViewController {
     }
 }
 
-
-```
