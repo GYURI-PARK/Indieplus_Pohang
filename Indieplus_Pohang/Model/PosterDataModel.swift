@@ -9,7 +9,8 @@ import Foundation
 import SwiftSoup
 
 class PosterDataModel {
-    var movieData: [[String: String]] = []
+    @Published var movieData: [[String: String]] = []
+//    var movieData: [NSDictionary] = []
     
     func fetchHTMLParsingResult(completion: @escaping ([[String: String]]?, Error?) -> Void) {
         let urlAddress = "https://www.dtryx.com/cinema/main.do?cgid=FE8EF4D2-F22D-4802-A39A-D58F23A29C1E&BrandCd=indieart&CinemaCd=000057"
@@ -32,6 +33,7 @@ class PosterDataModel {
                 
                 let imgSource = try imgElement.attr("src")
                 let movieDict: [String: String] = ["imgSource": imgSource, "movieTitle": movieTitle]
+//                let nsDictionary = movieDict as NSDictionary
                 movieData.append(movieDict)
             }
             

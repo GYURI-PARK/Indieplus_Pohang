@@ -9,6 +9,8 @@ import SwiftUI
 import UIKit
 
 struct MainView: View {
+    let viewController = PosterViewController()
+    
     var body: some View {
         NavigationView{
             ZStack{
@@ -34,7 +36,8 @@ struct MainView: View {
                                 
                                 Spacer(minLength: 40)
                                 
-                                PosterView(model: PosterDataModel())
+                                
+                                PosterView(viewController: viewController)
                                 
                                 Spacer(minLength: 20)
                                 

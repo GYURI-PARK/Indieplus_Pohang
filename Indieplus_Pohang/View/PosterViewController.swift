@@ -8,8 +8,9 @@
 import Foundation
 import SwiftSoup
 
-class PosterViewController: UIViewController {
+class PosterViewController: UIViewController, ObservableObject {
     var model = PosterDataModel()
+    @Published var movieCount = 3
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,9 @@ class PosterViewController: UIViewController {
             if let error = error {
                 print("Error: \(error)")
             } else if let movieData = movieData {
-                print(movieData)
+                self!.movieCount = movieData.count
+//                print(movieData)
+                print(self!.movieCount)
             }
         }
     }

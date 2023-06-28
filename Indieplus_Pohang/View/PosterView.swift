@@ -8,34 +8,29 @@
 import SwiftUI
 
 struct PosterView: View {
-    var model: PosterDataModel
+    @ObservedObject var viewController: PosterViewController
+//    var model = PosterDataModel
 
+    
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
                 Spacer()
-                ForEach(0..<3) { _ in
-                    Text("fsdfsf")
-                  
-//                    Spacer(minLength: 15)
-//                    Rectangle()
-//                        .frame(width: 186, height: 255)
-//                        .cornerRadius(15)
-//                        .foregroundColor(.white)
-//                    Spacer(minLength: 15)
+                ForEach(0..<viewController.movieCount, id: \.self) { index in
+                    
+                    Spacer(minLength: 15)
+                    Rectangle()
+                        .frame(width: 186, height: 255)
+                        .cornerRadius(15)
+                        .foregroundColor(.white)
+                    Spacer(minLength: 15)
                 }
                 Spacer()
             }
+        }.onAppear {
+            // PosterViewController에서 데이터를 가져오는 작업을 시작합니다.
+            viewController.fetchHTMLParsingResult()
         }
-//        .onAppear {
-//            if !model.isDataLoaded {
-//                model.fetchData { error in
-//                    if let error = error {
-//                        print("Error fetching data: \(error)")
-//                    }
-//                }
-//            }
-//        }
     }
 }
 
@@ -43,6 +38,7 @@ struct PosterView: View {
 
 struct PosterView_Previews: PreviewProvider {
     static var previews: some View {
-        PosterView(model: PosterDataModel())
+        let viewController = PosterViewController()
+        PosterView(viewController: viewController)
     }
 }
