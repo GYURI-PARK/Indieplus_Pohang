@@ -8,38 +8,48 @@
 import Foundation
 import SwiftSoup
 
-class PosterDataModel {
+class PosterDataModel: ObservableObject {
     @Published var movieData: [[String: String]] = []
-//    var movieData: [NSDictionary] = []
+    @Published var movieCount = 0
+
+    init() {
+        fetchHTMLParsingResult()
+    }
     
-    func fetchHTMLParsingResult(completion: @escaping ([[String: String]]?, Error?) -> Void) {
+    func fetchHTMLParsingResult() {
         let urlAddress = "https://www.dtryx.com/cinema/main.do?cgid=FE8EF4D2-F22D-4802-A39A-D58F23A29C1E&BrandCd=indieart&CinemaCd=000057"
         guard let url = URL(string: urlAddress) else {
-            completion(nil, NSError(domain: "Invalid URL", code: 0, userInfo: nil))
             return
         }
         
-        do {
-            let html = try String(contentsOf: url, encoding: .utf8)
-            let doc: Document = try SwiftSoup.parse(html)
-            
-            let thumElements: Elements = try doc.select(".thum")
-            
-            for thumElement in thumElements {
-                guard let imgElement = try thumElement.select("img").first(),
-                      let movieTitle = try thumElement.select(".subj").first()?.text() else {
-                    continue
+        DispatchQueue.global().async {
+            do {
+                let html = try String(contentsOf: url, encoding: .utf8)
+                let doc: Document = try SwiftSoup.parse(html)
+                
+                let thumElements: Elements = try doc.select(".thum")
+                
+                var movieData: [[String: String]] = []
+                
+                for thumElement in thumElements {
+                    guard let imgElement = try thumElement.select("img").first(),
+                          let movieTitle = try thumElement.select(".subj").first()?.text() else {
+                        continue
+                    }
+                    
+                    let imgSource = try imgElement.attr("src")
+                    let movieDict: [String: String] = ["imgSource": imgSource, "movieTitle": movieTitle]
+                    movieData.append(movieDict)
                 }
                 
-                let imgSource = try imgElement.attr("src")
-                let movieDict: [String: String] = ["imgSource": imgSource, "movieTitle": movieTitle]
-//                let nsDictionary = movieDict as NSDictionary
-                movieData.append(movieDict)
+                DispatchQueue.main.async {
+                    self.movieData = movieData
+                    self.movieCount = movieData.count
+                }
+            } catch {
+                // Handle error
+//                completion(nil, error)
             }
-            
-            completion(movieData, nil)
-        } catch let error {
-            completion(nil, error)
         }
     }
 }
