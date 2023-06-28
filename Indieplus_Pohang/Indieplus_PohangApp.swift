@@ -13,6 +13,7 @@ struct Indieplus_PohangApp: App {
         WindowGroup {
           //  MainView()
             WrapperView()
+//            PosterView(model: PosterPickerModel())
         }
     }
 }

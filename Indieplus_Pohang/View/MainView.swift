@@ -34,7 +34,7 @@ struct MainView: View {
                                 
                                 Spacer(minLength: 40)
                                 
-                                PosterView()
+                                PosterView(model: PosterDataModel())
                                 
                                 Spacer(minLength: 20)
                                 
