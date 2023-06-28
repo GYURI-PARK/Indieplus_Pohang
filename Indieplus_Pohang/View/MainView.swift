@@ -9,7 +9,7 @@ import SwiftUI
 import UIKit
 
 struct MainView: View {
-    let viewController = PosterViewController()
+    let posterModel = PosterDataModel()
     
     var body: some View {
         NavigationView{
@@ -37,7 +37,7 @@ struct MainView: View {
                                 Spacer(minLength: 40)
                                 
                                 
-                                PosterView(viewController: viewController)
+                                PosterView(model: posterModel)
                                 
                                 Spacer(minLength: 20)
                                 

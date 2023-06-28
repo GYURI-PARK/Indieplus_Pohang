@@ -9,10 +9,11 @@ import SwiftUI
 
 @main
 struct Indieplus_PohangApp: App {
-    let viewController = PosterViewController()
+    let model = PosterDataModel()
     var body: some Scene {
         WindowGroup {
-            PosterView(viewController: viewController)
+//            PosterView(model: model)
+            MainView()
         }
     }
 }
