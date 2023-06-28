@@ -8,8 +8,6 @@
 import Foundation
 import SwiftSoup
 
-// 모델에서 데이터를 관리하고 ViewController에서는 모델을 사용하여 데이터를 가져오는 방식으로 코드가 구성되었습니다. 이렇게 하면 데이터 관리와 UI 업데이트를 분리하여 코드를 더 구조적이고 유지보수하기 쉽게 만들 수 있습니다.
-
 class PosterViewController: UIViewController {
     var model = PosterDataModel()
     
