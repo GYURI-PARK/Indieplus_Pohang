@@ -9,6 +9,8 @@ import SwiftUI
 import UIKit
 
 struct MainView: View {
+    let posterModel = PosterDataModel()
+    
     var body: some View {
         NavigationView{
             ZStack{
@@ -34,7 +36,8 @@ struct MainView: View {
                                 
                                 Spacer(minLength: 40)
                                 
-                                PosterView(model: PosterDataModel())
+                                
+                                PosterView(model: posterModel)
                                 
                                 Spacer(minLength: 20)
                                 
@@ -63,6 +66,7 @@ struct MainView: View {
                 BottomBarView()
             }
         }
+        .accentColor(.main)
     }
 }
 
