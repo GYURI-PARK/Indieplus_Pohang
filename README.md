@@ -1,6 +1,6 @@
 # Indieplus_Pohang
 
-## SwiftSoap로 웹 크롤링하기 
+## SwiftSoup로 웹 크롤링하기 
 
 ```swift
 import Foundation
