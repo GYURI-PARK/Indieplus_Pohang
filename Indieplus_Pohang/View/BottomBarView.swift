@@ -8,67 +8,75 @@
 import SwiftUI
 
 struct BottomBarView: View {
+    
+    init() {
+            //Use this if NavigationBarTitle is with Large Font
+            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color.main)]
+
+            //Use this if NavigationBarTitle is with displayMode = .inline
+            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color.main)]
+        }
+    
     var body: some View {
-        
-        ZStack {
-            Rectangle()
-                .frame(width: 400, height: 98)
-                .foregroundColor(Color.main)
-                .ignoresSafeArea()
-            
-            NavigationLink {
-                TheaterView()
-                    .navigationBarTitle("INDIE PLUS POHANG")
-                    .navigationBarTitleDisplayMode(.inline)
-            } label : {
-                VStack{
-                    Image(systemName: "theatermasks.fill")
-                        .resizable()
-                        .frame(width: 40, height: 28)
-                        .padding(.top, 3)
-                    
-                    Text("영화관")
-                        .font(.system(size: 12, weight: .bold))
+            ZStack {
+                Rectangle()
+                    .frame(width: 400, height: 98)
+                    .foregroundColor(Color.main)
+                    .ignoresSafeArea()
+                
+                NavigationLink {
+                    TheaterView()
+                        .navigationBarTitle("INDIE PLUS POHANG")
+                        .navigationBarTitleDisplayMode(.inline)
+                        .accentColor(.main)
+                } label : {
+                    VStack{
+                        Image(systemName: "theatermasks.fill")
+                            .resizable()
+                            .frame(width: 40, height: 28)
+                            .padding(.top, 3)
+                        
+                        Text("영화관")
+                            .font(.system(size: 12, weight: .bold))
+                    }
+                    .foregroundColor(.black)
                 }
-                .foregroundColor(.black)
-            }
-            .offset(x: -130, y: -20)
-            
-            Button {} label : {
-                VStack{
-                    Image(systemName: "person.fill")
+                .offset(x: -130, y: -20)
+                
+                Button {} label : {
+                    VStack{
+                        Image(systemName: "person.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 40, height: 28)
+                            .padding(.top, 3)
+                        
+                        Text("마이")
+                            .font(.system(size: 12, weight: .bold))
+                    }
+                    .foregroundColor(.black)
+                }
+                .offset(x: 130, y: -20)
+                
+                ZStack{
+                    Circle()
+                        .foregroundColor(.black)
+                        .frame(width: 60)
+                        .overlay(Circle()
+                            .strokeBorder(Color.main, lineWidth: 1.3)
+                            .frame(width: 60))
+                    
+                    Image(systemName: "calendar")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 40, height: 28)
-                        .padding(.top, 3)
+                        .frame(width: 35, height: 28)
+                        .foregroundColor(.main)
                     
-                    Text("마이")
-                        .font(.system(size: 12, weight: .bold))
                 }
-                .foregroundColor(.black)
-            }
-            .offset(x: 130, y: -20)
-            
-            ZStack{
-                Circle()
-                    .foregroundColor(.black)
-                    .frame(width: 60)
-                    .overlay(Circle()
-                        .strokeBorder(Color.main, lineWidth: 1.3)
-                        .frame(width: 60))
+                .offset(x: 0, y: -50)
                 
-                Image(systemName: "calendar")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 35, height: 28)
-                    .foregroundColor(.main)
-
             }
-                    .offset(x: 0, y: -50)
-            
-        }
-        .offset(y: 400)
-        
+            .offset(y: 400)
     }
 }
 

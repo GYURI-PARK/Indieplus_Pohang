@@ -66,6 +66,7 @@ struct MainView: View {
                 BottomBarView()
             }
         }
+        .accentColor(.main)
     }
 }
 
