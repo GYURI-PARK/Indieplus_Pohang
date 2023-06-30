@@ -13,8 +13,7 @@ struct DatePickerView: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack{
                 Spacer()
-                
-                //DateView(selectedIndex: $selectedIndex)
+    
                 DateView()
                 
                 Spacer()
@@ -27,10 +26,16 @@ struct DateView: View {
     let today = Date()
     @State var selectedIndex = 0
     
+    // 몇월인지
+    
+    // 며칠인지
+    
     // 날짜 변환
     func dateToString(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "d"
+        let day = dateFormatter.string(from: date)
+        
         return dateFormatter.string(from: date)
     }
     

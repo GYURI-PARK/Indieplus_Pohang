@@ -19,19 +19,22 @@ struct PosterView: View {
                 ForEach(0..<model.movieCount, id: \.self) { index in
                     
                     Spacer(minLength: 15)
-                    AsyncImage(url: URL(string: model.movieData[index]["imgSource"] ?? "" )) { image in
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 186, height: 255)
-                            .cornerRadius(15)
-                    } placeholder: {
-                        Rectangle()
-                            .foregroundColor(.gray)
-                            .frame(width: 186, height: 255)
-                            .cornerRadius(15)
+                    
+                    Button {} label :  {
+                        AsyncImage(url: URL(string: model.movieData[index]["imgSource"] ?? "" )) { image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 186, height: 255)
+                                .cornerRadius(15)
+                        } placeholder: {
+                            Rectangle()
+                                .foregroundColor(.gray)
+                                .frame(width: 186, height: 255)
+                                .cornerRadius(15)
+                        }
+                        Spacer(minLength: 15)
                     }
-                    Spacer(minLength: 15)
                 }
                 Spacer()
             }
