@@ -8,12 +8,12 @@
 import Foundation
 import SwiftUI
 
-struct List: Codable {
-    let indieMap: IndieMap
-}
+//struct List: Codable {
+//    let indieMap: IndieMap
+//}
 
-struct IndieMap: Codable {
-    let showseqlist: [Showseqlist]
+struct List: Codable {
+    let Showseqlist: [Showseqlist]
 }
 
 struct Showseqlist: Codable {
@@ -33,14 +33,14 @@ struct Showseqlist: Codable {
 
 class TheaterManager: ObservableObject {
     let url = "https://dtryx.com/cinema/showseq_list.do"
-    @Published var showseqlist: [Showseqlist]
+    @Published var Showseqlist: [Showseqlist]
     
     init() {
-        self.showseqlist = []
+        self.Showseqlist = []
     }
     
-    func fetch(cgid: String, ssid: String?, tokn: String?, BrandCd: String, CinemaCd: String, PlaySDT: String, completion: @escaping ([TheaterVO]?) -> Void) {
-        let param = "cgid&=\(cgid)&ssid=\(ssid)&tokn=\(tokn)&BrandCd=\(BrandCd)&CinemaCd=\(CinemaCd)&PlaySDT=\(PlaySDT)"
+    func fetch(cgid: String, ssid: String?, tokn: String?, BrandCd: String, CinemaCd: String, PlaySDT: String, non: String, completion: @escaping ([TheaterVO]?) -> Void) {
+        let param = "cgid&=\(cgid)&ssid=\(ssid)&tokn=\(tokn)&BrandCd=\(BrandCd)&CinemaCd=\(CinemaCd)&PlaySDT=\(PlaySDT)&_=\(non)"
         guard let paramData = param.data(using: .utf8)else{
             NSLog("TheaterMegaManager paramData가 nil 입니다.")
             return
@@ -60,7 +60,7 @@ class TheaterManager: ObservableObject {
     func performRequest(with urlString: String, paramData:Data, completion: @escaping ([TheaterVO]?) -> Void) {
         guard let url = URL(string: urlString) else { return }
         var request = URLRequest(url: url)
-        request.httpMethod = "GET"
+        request.httpMethod = "POST"
         request.httpBody = paramData
         request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.setValue(String(paramData.count), forHTTPHeaderField: "Content-Length")
@@ -91,11 +91,10 @@ class TheaterManager: ObservableObject {
     }
     
     func parseJSON(_ movieData: Data) ->[TheaterVO]? {
-        
         do {
             let decoder = JSONDecoder() // decode: 데이터를 코드로 변경한다.
             let decodedData = try decoder.decode(List.self, from: movieData)
-            let list = decodedData.indieMap.showseqlist
+            let list = decodedData.Showseqlist
             let result = list.map{
                 return TheaterVO(MovieDate: $0.PlaySDT,
                                  StartTime: $0.StartTime,
@@ -112,7 +111,7 @@ class TheaterManager: ObservableObject {
                                  RemainSeatCnt: $0.RemainSeatCnt,
                                  ShowSeq: $0.ShowSeq)
             }
-            self.showseqlist = decodedData.indieMap.showseqlist
+            self.Showseqlist = decodedData.Showseqlist
             return result
         } catch {
             print(error)
