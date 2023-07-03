@@ -16,7 +16,8 @@ struct Indieplus_PohangApp: App {
 //            PosterView(model: model)
 //            MainView()
 //            TheaterManager()
-            MovieDetailView()
+            DatePickerView()
+//            MovieDetailView()
         }
     }
 }

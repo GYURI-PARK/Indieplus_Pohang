@@ -25,10 +25,14 @@ struct DatePickerView: View {
 struct DateView: View {
     let today = Date()
     @State var selectedIndex = 0
+    @State var dateList = Set<String>()
     
-    // 몇월인지
-    
-    // 며칠인지
+    // "2023-07-01" 형태로 표시되는 날짜들만 배열에 담기
+    func dateToList(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter.string(from: date)
+    }
     
     // 날짜 변환
     func dateToString(date: Date) -> String {
@@ -63,6 +67,9 @@ struct DateView: View {
         if dateFormatter.string(from: date) == "월" || dateFormatter.string(from: date) == "화" {
             return true
         } else {
+            DispatchQueue.main.async {
+                dateList.insert(dateToList(date: date))
+            }
             return false
         }
     }
@@ -74,8 +81,10 @@ struct DateView: View {
             
             if !isTodayHoliday(date: date) {
                 Spacer(minLength: 10)
+               
                 Button {
                     selectedIndex = index
+                    
                 } label: {
                     ZStack{
                         Rectangle()
@@ -107,6 +116,7 @@ struct DateView: View {
         }
     }
 }
+
 struct DatePickerView_Previews: PreviewProvider {
     static var previews: some View {
         DatePickerView()
