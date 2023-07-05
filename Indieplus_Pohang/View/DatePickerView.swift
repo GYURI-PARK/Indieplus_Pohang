@@ -26,6 +26,10 @@ struct DateView: View {
     let today = Date()
     @State var selectedIndex = 0
     @State var dateList = Set<String>()
+    @State var selectedDate = ""
+    
+    @StateObject var theatermodel = TheaterManager()
+    @StateObject var moviemodel = MovieManager()
     
     // "2023-07-01" 형태로 표시되는 날짜들만 배열에 담기
     func dateToList(date: Date) -> String {
@@ -38,7 +42,7 @@ struct DateView: View {
     func dateToString(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "d"
-        let day = dateFormatter.string(from: date)
+//        let day = dateFormatter.string(from: date)
         
         return dateFormatter.string(from: date)
     }
@@ -75,7 +79,7 @@ struct DateView: View {
     }
     
     var body: some View {
-        ForEach(0..<12) { index in
+        ForEach(0..<10) { index in
             
             let date = Calendar.current.date(byAdding: .day, value: index, to: today)!
             
@@ -84,6 +88,9 @@ struct DateView: View {
                
                 Button {
                     selectedIndex = index
+                    selectedDate = dateToList(date: date)
+                    moviemodel.getMovieDetail(date: selectedDate)
+                    moviemodel.updateCount()
                     
                 } label: {
                     ZStack{
@@ -98,16 +105,13 @@ struct DateView: View {
                             )
                         
                         VStack(spacing: 2){
-                            
                             Text(dateToString(date: date))
                                 .font(.system(size: 20, weight: .bold))
                                 .foregroundColor(index == selectedIndex ? .black : Color.main)
                             
-                            
                             Text(dayToString(date: date))
                                 .font(.system(size: 15, weight: .bold))
                                 .foregroundColor(index == selectedIndex ? .black : Color.main)
-                            
                         }
                     }
                 }

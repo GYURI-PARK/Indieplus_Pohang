@@ -10,6 +10,8 @@ import UIKit
 
 struct MainView: View {
     let posterModel = PosterDataModel()
+    let movieModel = MovieManager()
+    let theaterModel = TheaterManager()
     
     var body: some View {
         NavigationView{
@@ -51,7 +53,7 @@ struct MainView: View {
                             DatePickerView()
                             
                             
-                            MoviePickerView()
+                            MoviePickerView(theatermodel: theaterModel, moviemodel: movieModel)
                             
                             
                             DailyReviewView()

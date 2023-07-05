@@ -8,10 +8,6 @@
 import Foundation
 import SwiftUI
 
-//struct List: Codable {
-//    let indieMap: IndieMap
-//}
-
 struct List: Codable {
     let Showseqlist: [Showseqlist]
 }
@@ -39,8 +35,8 @@ class TheaterManager: ObservableObject {
         self.Showseqlist = []
     }
     
-    func fetch(cgid: String, ssid: String?, tokn: String?, BrandCd: String, CinemaCd: String, PlaySDT: String, non: String, completion: @escaping ([TheaterVO]?) -> Void) {
-        let param = "cgid&=\(cgid)&ssid=\(ssid)&tokn=\(tokn)&BrandCd=\(BrandCd)&CinemaCd=\(CinemaCd)&PlaySDT=\(PlaySDT)&_=\(non)"
+    func fetch(cgid: String, ssid: String?, tokn: String?, BrandCd: String, CinemaCd: String, PlaySDT: String, completion: @escaping ([TheaterVO]?) -> Void) {
+        let param = "cgid&=\(cgid)&ssid=\(ssid)&tokn=\(tokn)&BrandCd=\(BrandCd)&CinemaCd=\(CinemaCd)&PlaySDT=\(PlaySDT)"
         guard let paramData = param.data(using: .utf8)else{
             NSLog("TheaterMegaManager paramData가 nil 입니다.")
             return

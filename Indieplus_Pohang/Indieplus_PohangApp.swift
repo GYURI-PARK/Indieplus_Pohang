@@ -14,9 +14,9 @@ struct Indieplus_PohangApp: App {
     var body: some Scene {
         WindowGroup {
 //            PosterView(model: model)
-//            MainView()
+            MainView()
 //            TheaterManager()
-            DatePickerView()
+//            DatePickerView()
 //            MovieDetailView()
         }
     }

@@ -15,6 +15,7 @@ struct PosterView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
+                
                 Spacer()
                 ForEach(0..<model.movieCount, id: \.self) { index in
                     
@@ -38,7 +39,8 @@ struct PosterView: View {
                 }
                 Spacer()
             }
-        }.onAppear {
+        }
+        .onAppear {
             // PosterViewController에서 데이터를 가져오는 작업을 시작합니다.
             model.fetchHTMLParsingResult()
         }
