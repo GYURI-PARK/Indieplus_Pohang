@@ -22,27 +22,62 @@ class MovieManager: ObservableObject {
 //            getMovieDetail(date: dateString)
 //        }
 
+//    func getMovieDetail(date: String) {
+//        DispatchQueue.main.async {
+//            self.theatermodel.fetch(cgid: "FE8EF4D2-F22D-4802-A39A-D58F23A29C1E", ssid: "", tokn: "", BrandCd: "indieart", CinemaCd: "000057", PlaySDT: date) { theaters in
+//                DispatchQueue.main.async {
+//                    if let theaters = theaters {
+//                        let sortedTheaters = theaters.sorted { Int($0.ShowSeq) ?? 0 < Int($1.ShowSeq) ?? 0 }
+//                        self.movieTitles = sortedTheaters.map { $0.MovieTitle } // 영화 제목들을 업데이트
+//                        self.updateCount()
+//                        print("정렬된 리스트", self.movieTitles)
+//                        print("개수", self.movieTitles.count)
+//                    } else {
+//                        print("상영 정보를 가져오는데 실패했습니다.")
+//                    }
+//                }
+//            }
+//        }
+//    }
     func getMovieDetail(date: String) {
         DispatchQueue.main.async {
             self.theatermodel.fetch(cgid: "FE8EF4D2-F22D-4802-A39A-D58F23A29C1E", ssid: "", tokn: "", BrandCd: "indieart", CinemaCd: "000057", PlaySDT: date) { theaters in
                 DispatchQueue.main.async {
-                    if let theaters = theaters {
-                        let sortedTheaters = theaters.sorted { Int($0.ShowSeq) ?? 0 < Int($1.ShowSeq) ?? 0 }
-                        self.movieTitles = sortedTheaters.map { $0.MovieTitle } // 영화 제목들을 업데이트
+                    do {
+                        guard let theaters = theaters else {
+                            print("상영 정보를 가져오는데 실패했습니다.")
+                            return
+                        }
+                        
+                        let sortedTheaters = try theaters.sorted { (theater1, theater2) throws -> Bool in
+                            guard let showSeq1 = Int(theater1.ShowSeq), let showSeq2 = Int(theater2.ShowSeq) else {
+                                throw NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "ShowSeq parsing failed."])
+                            }
+                            return showSeq1 < showSeq2
+                        }
+                        
+                        self.movieTitles = sortedTheaters.map { $0.MovieTitle } 
                         self.updateCount()
                         print("정렬된 리스트", self.movieTitles)
                         print("개수", self.movieTitles.count)
-                    } else {
-                        print("상영 정보를 가져오는데 실패했습니다.")
+                    } catch {
+                        print("정렬에 실패했습니다: \(error.localizedDescription)")
                     }
                 }
             }
         }
     }
+
     
     func updateCount() {
         DispatchQueue.main.async {
             self.count = self.movieTitles.count
+        }
+    }
+    
+    func updateMovieTitles(newTitles: [String]) {
+        DispatchQueue.main.async {
+            self.movieTitles = newTitles
         }
     }
 }

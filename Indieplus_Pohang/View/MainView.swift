@@ -12,6 +12,7 @@ struct MainView: View {
     let posterModel = PosterDataModel()
     let movieModel = MovieManager()
     let theaterModel = TheaterManager()
+//    @EnvironmentObject var moviemodel: MovieManager
     
     var body: some View {
         NavigationView{

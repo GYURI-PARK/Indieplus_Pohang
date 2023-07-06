@@ -9,11 +9,14 @@ import SwiftUI
 
 struct MoviePickerView: View {
     @State var selectedTime = ""
-
-    @ObservedObject var theatermodel: TheaterManager
-    @ObservedObject var moviemodel: MovieManager
-
+    
+    @ObservedObject var theatermodel = TheaterManager()
+    @ObservedObject var moviemodel = MovieManager()
+//    @EnvironmentObject var moviemodel: MovieManager
+//    @EnvironmentObject var theatermodel: TheaterManager
+    
     @State private var count = 0
+    @State private var movieTitles: [String] = []
     
     func presentingDifferentTime(index: Int) -> String {
         if index == 0 {
@@ -27,41 +30,66 @@ struct MoviePickerView: View {
         }
         return ""
     }
-
+    
     var body: some View {
         VStack(spacing: 30){
-            LazyVStack{
-                ForEach(0..<count, id: \.self) { index in
-                    HStack(spacing: 20){
-                        VStack{
-                            Circle()
-                                .frame(width: 15)
-                                .foregroundColor(.clear)
-                                .overlay(
-                                    Circle()
-                                        .strokeBorder(Color.main)
-                                        .frame(width: 15))
-                            
-                            Text("\(moviemodel.movieTitles.count)")
-                            
-                            Rectangle()
-                                .frame(width: 1, height: 60)
-                                .foregroundColor(Color.main)
-                            
-                        }
-                        MovieSummaryInfoView(selectedTime: presentingDifferentTime(index: index), theatermodel: theatermodel, moviemodel: moviemodel)
-                            .padding()
+            ForEach(0..<moviemodel.movieTitles.count, id: \.self) { index in
+                HStack(spacing: 20){
+                    VStack{
+                        Circle()
+                            .frame(width: 15)
+                            .foregroundColor(.clear)
                             .overlay(
-                                RoundedRectangle(cornerRadius: 15)
+                                Circle()
                                     .strokeBorder(Color.main)
-                                    .frame(width: 300, height: 80)
-                            )
+                                    .frame(width: 15))
+                        
+                        //                            Text("\(moviemodel.movieTitles[0])")
+                        Text("\(moviemodel.movieTitles[0])")
+                        
+                        Rectangle()
+                            .frame(width: 1, height: 60)
+                            .foregroundColor(Color.main)
                     }
+                    MovieSummaryInfoView(selectedTime: presentingDifferentTime(index: index), theatermodel: theatermodel, moviemodel: moviemodel)
+                        .padding()
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 15)
+                                .strokeBorder(Color.main)
+                                .frame(width: 300, height: 80)
+                        )
                 }
-                .onReceive(moviemodel.$movieTitles) { _ in
-                    // moviemodel.movieTitles가 업데이트될 때마다 실행되는 로직
-                    // 여기서 필요한 업데이트 작업을 수행하면 됩니다.
-                    self.count = moviemodel.movieTitles.count
+            }
+//            .onAppear {
+//                let today = Date()
+//                let dateFormatter = DateFormatter()
+//                dateFormatter.dateFormat = "yyyy-MM-dd"
+//                let dateString = dateFormatter.string(from: today)
+//                moviemodel.getMovieDetail(date: dateString)
+//            }
+//            .onReceive(moviemodel.$movieTitles) { _ in
+//                DispatchQueue.main.async {
+//                    self.count = moviemodel.count
+//                    print("onreceive", self.count)
+//                    self.movieTitles = moviemodel.movieTitles
+//                    print("onrerwd", self.movieTitles)
+//                }
+//            }
+            .onReceive(moviemodel.$movieTitles) { _ in
+                DispatchQueue.main.async {
+                    self.count = moviemodel.count
+                    self.movieTitles = moviemodel.movieTitles
+                    print("onreceive", self.count)
+                }
+            }
+            .onAppear {
+                let today = Date()
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                let dateString = dateFormatter.string(from: today)
+                moviemodel.getMovieDetail(date: dateString)
+                DispatchQueue.main.async {
+                    moviemodel.updateMovieTitles(newTitles: moviemodel.movieTitles)
                 }
             }
         }
@@ -107,11 +135,12 @@ struct MovieSummaryInfoView: View {
         }
     }
 }
-
-struct MoviePickerView_Previews: PreviewProvider {
-    static var previews: some View {
-        let model = TheaterManager()
-        let moviemodel = MovieManager()
-        MoviePickerView(theatermodel: model, moviemodel: moviemodel)
-    }
-}
+//
+//struct MoviePickerView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let model = TheaterManager()
+//        let moviemodel = MovieManager()
+//        
+//        MoviePickerView(theatermodel: model, moviemodel: moviemodel)
+//    }
+//}

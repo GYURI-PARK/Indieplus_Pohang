@@ -31,6 +31,10 @@ struct DateView: View {
     @StateObject var theatermodel = TheaterManager()
     @StateObject var moviemodel = MovieManager()
     
+    @State private var count = 0
+    @State private var movieTitles: [String] = []
+
+    
     // "2023-07-01" 형태로 표시되는 날짜들만 배열에 담기
     func dateToList(date: Date) -> String {
         let dateFormatter = DateFormatter()
@@ -42,7 +46,7 @@ struct DateView: View {
     func dateToString(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "d"
-//        let day = dateFormatter.string(from: date)
+        //        let day = dateFormatter.string(from: date)
         
         return dateFormatter.string(from: date)
     }
@@ -85,7 +89,7 @@ struct DateView: View {
             
             if !isTodayHoliday(date: date) {
                 Spacer(minLength: 10)
-               
+                
                 Button {
                     selectedIndex = index
                     selectedDate = dateToList(date: date)
@@ -117,9 +121,19 @@ struct DateView: View {
                 }
                 Spacer(minLength: 10)
             }
+        }.onChange(of: selectedDate) {newValue in
+            // selectedDate 값이 변경될 때 실행되는 로직
+            print("Selected date changed: \(newValue)")
+            print("on change \(moviemodel.movieTitles.count)")
+            
+            // 변경된 movieTitles와 count를 MoviePickerView로 전달
+            movieTitles = moviemodel.movieTitles
+            count = moviemodel.count
+            
         }
     }
 }
+
 
 struct DatePickerView_Previews: PreviewProvider {
     static var previews: some View {
