@@ -15,6 +15,8 @@ struct MoviePickerView: View {
 
     @State private var count = 0
     @State private var movieTitles: [String] = []
+    @State private var movieTimes: [String] = []
+    @State private var movieEngTitles: [String] = []
 
     func presentingDifferentTime(index: Int) -> String {
         if index == 0 {
@@ -59,6 +61,8 @@ struct MoviePickerView: View {
                 DispatchQueue.main.async {
                     self.movieTitles = moviemodel.movieTitles
                     self.count = moviemodel.count
+                    self.movieTimes = moviemodel.movieTimes
+                    self.movieEngTitles = moviemodel.movieEngTitles
                 }
             }
             .onAppear {
@@ -85,16 +89,22 @@ struct MovieSummaryInfoView: View {
 
     var body: some View {
         HStack(spacing: 10) {
-            Text("\(selectedTime)")
-                .foregroundColor(.white)
-                .font(.system(size: 18, weight: .semibold))
-                .padding(.trailing, 3)
+            
+            if index < moviemodel.movieTimes.count {
+                Text("\(moviemodel.movieTimes[index])")
+                    .foregroundColor(.white)
+                    .font(.system(size: 18, weight: .semibold))
+                    .padding(.trailing, 5)
+            } else {
+                Text("Invalid Index")
+                    .foregroundColor(.white)
+                    .font(.system(size: 18, weight: .semibold))
+            }
 
             VStack(alignment: .leading, spacing: 8){
                 Button(action: {
                     // 영화 제목 클릭 시 실행될 동작
                 }) {
-                    // 날짜와 순서 인덱스를 받으면 자동으로 영화제목 출력하게끔
                     if index < moviemodel.movieTitles.count {
                         Text("\(moviemodel.movieTitles[index])")
                             .font(.system(size: 18, weight: .medium))
@@ -105,11 +115,17 @@ struct MovieSummaryInfoView: View {
                             .foregroundColor(.white)
                     }
                 }
-
-                Text("Triangle of Sadness, 2023")
-                    .font(.system(size: 12))
-                    .opacity(0.7)
-                    .foregroundColor(.white)
+                if index < moviemodel.movieEngTitles.count {
+                    Text("\(moviemodel.movieEngTitles[index]) (2023) ")
+                        .font(.system(size: 12))
+                        .opacity(0.7)
+                        .foregroundColor(.white)
+                } else {
+                    Text("Invalid Index")
+                        .font(.system(size: 12))
+                        .opacity(0.7)
+                        .foregroundColor(.white)
+                }
             }
             Button(action: {
                             // 예매 버튼 클릭 시 실행될 동작

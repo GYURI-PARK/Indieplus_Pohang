@@ -11,6 +11,7 @@ class MovieManager: ObservableObject {
     
     @Published var movieTitles: [String] = [] // 영화 제목들을 저장할 배열
     @Published var movieTimes: [String] = [] // 영화 시간들을 저장할 배열
+    @Published var movieEngTitles: [String] = [] // 영어제목들을 저장할 배열
     @Published var count: Int = 0
     private let theatermodel = TheaterManager()
     
@@ -33,10 +34,11 @@ class MovieManager: ObservableObject {
                         
                         self.movieTitles = sortedTheaters.map { $0.MovieTitle }
                         self.movieTimes = sortedTheaters.map { $0.StartTime }
+                        self.movieEngTitles = sortedTheaters.map { $0.MovieNmEng ?? "" }
                         self.updateCount()
                         print("정렬된 리스트", self.movieTitles)
                         print("개수", self.movieTitles.count)
-                        print("시간", self.movieTimes)
+                        print("영어", self.movieEngTitles)
                     } catch {
                         print("정렬에 실패했습니다: \(error.localizedDescription)")
                     }
