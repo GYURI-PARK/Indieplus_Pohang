@@ -15,27 +15,32 @@ struct PosterView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
+                
                 Spacer()
                 ForEach(0..<model.movieCount, id: \.self) { index in
                     
                     Spacer(minLength: 15)
-                    AsyncImage(url: URL(string: model.movieData[index]["imgSource"] ?? "" )) { image in
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 186, height: 255)
-                            .cornerRadius(15)
-                    } placeholder: {
-                        Rectangle()
-                            .foregroundColor(.gray)
-                            .frame(width: 186, height: 255)
-                            .cornerRadius(15)
+                    
+                    Button {} label :  {
+                        AsyncImage(url: URL(string: model.movieData[index]["imgSource"] ?? "" )) { image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 186, height: 255)
+                                .cornerRadius(15)
+                        } placeholder: {
+                            Rectangle()
+                                .foregroundColor(.gray)
+                                .frame(width: 186, height: 255)
+                                .cornerRadius(15)
+                        }
+                        Spacer(minLength: 15)
                     }
-                    Spacer(minLength: 15)
                 }
                 Spacer()
             }
-        }.onAppear {
+        }
+        .onAppear {
             // PosterViewController에서 데이터를 가져오는 작업을 시작합니다.
             model.fetchHTMLParsingResult()
         }

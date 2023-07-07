@@ -9,7 +9,9 @@ import SwiftUI
 import UIKit
 
 struct MainView: View {
-    let posterModel = PosterDataModel()
+    @ObservedObject var posterModel = PosterDataModel()
+    @ObservedObject var theaterModel = TheaterManager()
+    @ObservedObject var movieModel = MovieManager()
     
     var body: some View {
         NavigationView{
@@ -48,10 +50,10 @@ struct MainView: View {
                                 .background(Color.main)
                             
                             
-                            DatePickerView()
+                            DatePickerView(theatermodel: theaterModel, moviemodel: movieModel)
                             
                             
-                            MoviePickerView()
+                            MoviePickerView(theatermodel: theaterModel, moviemodel: movieModel)
                             
                             
                             DailyReviewView()

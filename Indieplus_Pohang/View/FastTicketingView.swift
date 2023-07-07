@@ -9,17 +9,18 @@ import SwiftUI
 
 struct FastTicketingView: View {
     var body: some View {
-        ZStack {
-            Rectangle()
-                .frame(width: 100, height: 40)
-                .foregroundColor(Color.main)
-                .cornerRadius(10, corners: [.bottomLeft, .topLeft])
-            
-            Text("빠른 예매")
-                .font(.system(size: 17, weight: .bold))
-                .foregroundColor(.black)
-        }
-        .offset(x: 151, y: 318)
+        Button {} label : {
+            ZStack {
+                Rectangle()
+                    .frame(width: 100, height: 40)
+                    .foregroundColor(Color.main)
+                    .cornerRadius(10, corners: [.bottomLeft, .topLeft])
+                
+                Text("빠른 예매")
+                    .font(.system(size: 17, weight: .bold))
+                    .foregroundColor(.black)
+            }
+        }.offset(x: 151, y: 318)
     }
 }
 

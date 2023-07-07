@@ -9,11 +9,15 @@ import SwiftUI
 
 @main
 struct Indieplus_PohangApp: App {
-    let model = PosterDataModel()
+//    let model = PosterDataModel()
+    let movie = TheaterManager()
     var body: some Scene {
         WindowGroup {
 //            PosterView(model: model)
             MainView()
+//            TheaterManager()
+//            DatePickerView()
+//            MovieDetailView()
         }
     }
 }

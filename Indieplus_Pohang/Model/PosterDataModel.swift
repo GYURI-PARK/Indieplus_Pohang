@@ -46,10 +46,7 @@ class PosterDataModel: ObservableObject {
                     self.movieData = movieData
                     self.movieCount = movieData.count
                 }
-            } catch {
-                // Handle error
-//                completion(nil, error)
-            }
+            } catch { }
         }
     }
 }
