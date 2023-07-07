@@ -74,6 +74,7 @@ struct MoviePickerView: View {
                 DispatchQueue.main.async {
                     moviemodel.updateMovieTitles(newTitles: moviemodel.movieTitles)
                 }
+                
             }
         }
     }

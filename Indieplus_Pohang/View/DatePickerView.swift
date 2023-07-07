@@ -125,9 +125,9 @@ struct DateView: View {
                 Spacer(minLength: 10)
             }
         }.onChange(of: selectedDate) {newValue in
-            // selectedDate 값이 변경될 때 실행되는 로직
-            print("Selected date changed: \(newValue)")
-            print("on change \(moviemodel.movieTitles.count)")
+//            // selectedDate 값이 변경될 때 실행되는 로직
+//            print("Selected date changed: \(newValue)")
+//            print("on change \(moviemodel.movieTitles.count)")
             
             // 변경된 movieTitles와 count를 MoviePickerView로 전달
             movieTitles = moviemodel.movieTitles
@@ -136,10 +136,3 @@ struct DateView: View {
         }
     }
 }
-
-
-//struct DatePickerView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DatePickerView()
-//    }
-//}
