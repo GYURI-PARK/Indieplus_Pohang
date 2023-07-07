@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct DatePickerView: View {
-    @State var selectedIndex: Int = 0
+//    @State var selectedIndex: Int = 0
+    @ObservedObject var theatermodel: TheaterManager
+    @ObservedObject var moviemodel: MovieManager
+    
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack{
                 Spacer()
     
-                DateView()
+                DateView(theatermodel: theatermodel, moviemodel: moviemodel)
                 
                 Spacer()
             }
@@ -28,8 +31,8 @@ struct DateView: View {
     @State var dateList = Set<String>()
     @State var selectedDate = ""
     
-    @StateObject var theatermodel = TheaterManager()
-    @StateObject var moviemodel = MovieManager()
+    @StateObject var theatermodel: TheaterManager
+    @StateObject var moviemodel: MovieManager
     
     @State private var count = 0
     @State private var movieTitles: [String] = []
@@ -135,8 +138,8 @@ struct DateView: View {
 }
 
 
-struct DatePickerView_Previews: PreviewProvider {
-    static var previews: some View {
-        DatePickerView()
-    }
-}
+//struct DatePickerView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DatePickerView()
+//    }
+//}
