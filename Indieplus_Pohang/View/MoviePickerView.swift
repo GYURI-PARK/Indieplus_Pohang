@@ -114,6 +114,7 @@ struct MovieSummaryInfoView: View {
                 }) {
                     if index < moviemodel.movieTitles.count {
                         Text("\(moviemodel.movieTitles[index])")
+                            .lineLimit(1)
                             .font(.system(size: 18, weight: .medium))
                             .foregroundColor(.white)
                             .frame(width: 150, alignment: .leading)
@@ -126,6 +127,7 @@ struct MovieSummaryInfoView: View {
                 }
                 if index < moviemodel.movieEngTitles.count {
                     Text("\(moviemodel.movieEngTitles[index])")
+                        .lineLimit(1)
                         .font(.system(size: 12))
                         .opacity(0.7)
                         .foregroundColor(.white)
