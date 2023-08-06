@@ -34,7 +34,7 @@ struct MoviePickerView: View {
     var body: some View {
         VStack(spacing: 30){
             ForEach(0..<moviemodel.count, id: \.self) { index in
-                HStack(spacing: 20){
+                HStack(spacing: 10){
                     VStack{
                         Circle()
                             .frame(width: 15)
@@ -48,34 +48,37 @@ struct MoviePickerView: View {
                             .frame(width: 1, height: 60)
                             .foregroundColor(Color.main)
                     }
+                    
+                    
+                  
                     MovieSummaryInfoView(selectedTime: presentingDifferentTime(index: index), theatermodel: theatermodel, moviemodel: moviemodel, index: index)
                         .padding()
                         .overlay(
                             RoundedRectangle(cornerRadius: 15)
                                 .strokeBorder(Color.main)
-                                .frame(width: 300, height: 80)
+                                .frame(width: 320, height: 80)
                         )
                 }
             }
-            .onReceive(moviemodel.$movieTitles) { _ in
-                DispatchQueue.main.async {
-                    self.movieTitles = moviemodel.movieTitles
-                    self.count = moviemodel.count
-                    self.movieTimes = moviemodel.movieTimes
-                    self.movieEngTitles = moviemodel.movieEngTitles
-                }
-            }
-            .onAppear {
-                let today = Date()
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd"
-                let dateString = dateFormatter.string(from: today)
-                moviemodel.getMovieDetail(date: dateString)
-                DispatchQueue.main.async {
-                    moviemodel.updateMovieTitles(newTitles: moviemodel.movieTitles)
-                }
-                
-            }
+//            .onReceive(moviemodel.$movieTitles) { _ in
+//                DispatchQueue.main.async {
+//                    self.movieTitles = moviemodel.movieTitles
+//                    self.count = moviemodel.count
+//                    self.movieTimes = moviemodel.movieTimes
+//                    self.movieEngTitles = moviemodel.movieEngTitles
+//                }
+//            }
+//            .onAppear {
+//                let today = Date()
+//                let dateFormatter = DateFormatter()
+//                dateFormatter.dateFormat = "yyyy-MM-dd"
+//                let dateString = dateFormatter.string(from: today)
+//                moviemodel.getMovieDetail(date: dateString)
+//                DispatchQueue.main.async {
+//                    moviemodel.updateMovieTitles(newTitles: moviemodel.movieTitles)
+//                }
+//
+//            }
         }
     }
 }
@@ -95,11 +98,14 @@ struct MovieSummaryInfoView: View {
                 Text("\(moviemodel.movieTimes[index])")
                     .foregroundColor(.white)
                     .font(.system(size: 18, weight: .semibold))
-                    .padding(.trailing, 5)
+                    .padding(.horizontal, 5)
+                    .frame(width: 60)
             } else {
                 Text("Invalid Index")
                     .foregroundColor(.white)
                     .font(.system(size: 18, weight: .semibold))
+                    .padding(.horizontal, 5)
+                    .frame(width: 60)
             }
 
             VStack(alignment: .leading, spacing: 8){
@@ -110,22 +116,26 @@ struct MovieSummaryInfoView: View {
                         Text("\(moviemodel.movieTitles[index])")
                             .font(.system(size: 18, weight: .medium))
                             .foregroundColor(.white)
+                            .frame(width: 150, alignment: .leading)
                     } else {
                         Text("Invalid Index")
                             .font(.system(size: 18, weight: .medium))
                             .foregroundColor(.white)
+                            .frame(width: 150, alignment: .leading)
                     }
                 }
                 if index < moviemodel.movieEngTitles.count {
-                    Text("\(moviemodel.movieEngTitles[index]) (2023) ")
+                    Text("\(moviemodel.movieEngTitles[index])")
                         .font(.system(size: 12))
                         .opacity(0.7)
                         .foregroundColor(.white)
+                        .frame(width: 150, alignment: .leading)
                 } else {
                     Text("Invalid Index")
                         .font(.system(size: 12))
                         .opacity(0.7)
                         .foregroundColor(.white)
+                        .frame(width: 150, alignment: .leading)
                 }
             }
             Button(action: {
@@ -133,7 +143,8 @@ struct MovieSummaryInfoView: View {
             }) {
                 Text("예매\n하기")
                     .foregroundColor(.white)
-                    .padding(.leading)
+                    .frame(width: 70)
+                    .padding(.leading, 10)
             }
         }
     }
