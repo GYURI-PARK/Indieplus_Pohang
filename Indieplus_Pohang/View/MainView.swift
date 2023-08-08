@@ -9,9 +9,9 @@ import SwiftUI
 import UIKit
 
 struct MainView: View {
-    @ObservedObject var posterModel = PosterDataModel()
+    @ObservedObject var posterModel = PosterViewModel()
     @ObservedObject var theaterModel = TheaterManager()
-    @ObservedObject var movieModel = MovieManager()
+    @ObservedObject var movieModel = MoviePickerViewModel()
     
     var body: some View {
         NavigationView{

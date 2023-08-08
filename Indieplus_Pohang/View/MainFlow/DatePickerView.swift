@@ -10,7 +10,7 @@ import SwiftUI
 struct DatePickerView: View {
 //    @State var selectedIndex: Int = 0
     @ObservedObject var theatermodel: TheaterManager
-    @ObservedObject var moviemodel: MovieManager
+    @ObservedObject var moviemodel: MoviePickerViewModel
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -32,7 +32,7 @@ struct DateView: View {
     @State var selectedDate = ""
     
     @StateObject var theatermodel: TheaterManager
-    @StateObject var moviemodel: MovieManager
+    @StateObject var moviemodel: MoviePickerViewModel
     
     @State private var count = 0
     @State private var movieTitles: [String] = []
