@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MovieManager: ObservableObject {
+class MoviePickerViewModel: ObservableObject {
     
     @Published var movieTitles: [String] = [] // 영화 제목들을 저장할 배열
     @Published var movieTimes: [String] = [] // 영화 시간들을 저장할 배열

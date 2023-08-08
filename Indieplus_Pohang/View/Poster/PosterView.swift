@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PosterView: View {
     
-    @ObservedObject var model: PosterDataModel
+    @ObservedObject var model: PosterViewModel
 
     
     var body: some View {
@@ -49,9 +49,9 @@ struct PosterView: View {
 
 
 
-struct PosterView_Previews: PreviewProvider {
-    static var previews: some View {
-        let model = PosterDataModel()
-        PosterView(model: model)
-    }
-}
+//struct PosterView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let model = PosterDataModel()
+//        PosterView(model: model)
+//    }
+//}

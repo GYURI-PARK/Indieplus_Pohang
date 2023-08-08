@@ -8,7 +8,7 @@
 import Foundation
 import SwiftSoup
 
-class PosterDataModel: ObservableObject {
+class PosterViewModel: ObservableObject {
     @Published var movieData: [[String: String]] = []
     @Published var movieCount = 0
 

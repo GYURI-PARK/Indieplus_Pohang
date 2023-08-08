@@ -8,25 +8,6 @@
 import Foundation
 import SwiftUI
 
-struct List: Codable {
-    let Showseqlist: [Showseqlist]
-}
-
-struct Showseqlist: Codable {
-    let PlaySDT: String
-    let StartTime, EndTime: String
-    let CinemaCd: String
-    let MovieCd: String
-    let RatingNm: String
-    let PosterGuID: String
-    let Url: String
-    let MovieNm: String
-    let RunningTime: String
-    let MovieNmEng: String?
-    let TotalSeatCnt, RemainSeatCnt: String
-    let ShowSeq: String // 오늘 상영 순서
-}
-
 class TheaterManager: ObservableObject {
     let url = "https://dtryx.com/cinema/showseq_list.do"
     @Published var Showseqlist: [Showseqlist]

@@ -11,7 +11,7 @@ struct MoviePickerView: View {
     @State var selectedTime = ""
 
     @ObservedObject var theatermodel: TheaterManager
-    @ObservedObject var moviemodel: MovieManager
+    @ObservedObject var moviemodel: MoviePickerViewModel
 
     @State private var count = 0
     @State private var movieTitles: [String] = []
@@ -95,7 +95,7 @@ struct MovieSummaryInfoView: View {
 
     var selectedTime: String
     @ObservedObject var theatermodel: TheaterManager
-    @ObservedObject var moviemodel: MovieManager
+    @ObservedObject var moviemodel: MoviePickerViewModel
     var index: Int
 
     var body: some View {

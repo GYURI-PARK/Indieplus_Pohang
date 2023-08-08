@@ -26,3 +26,23 @@ struct TheaterVO: Codable {
 //    var theaterDetail:[String:String]?
 //    var score:Double?
 }
+
+
+struct List: Codable {
+    let Showseqlist: [Showseqlist]
+}
+
+struct Showseqlist: Codable {
+    let PlaySDT: String
+    let StartTime, EndTime: String
+    let CinemaCd: String
+    let MovieCd: String
+    let RatingNm: String
+    let PosterGuID: String
+    let Url: String
+    let MovieNm: String
+    let RunningTime: String
+    let MovieNmEng: String?
+    let TotalSeatCnt, RemainSeatCnt: String
+    let ShowSeq: String // 오늘 상영 순서
+}
