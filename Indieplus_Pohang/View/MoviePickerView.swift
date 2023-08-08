@@ -33,31 +33,38 @@ struct MoviePickerView: View {
 
     var body: some View {
         VStack(spacing: 30){
-            ForEach(0..<moviemodel.count, id: \.self) { index in
-                HStack(spacing: 10){
-                    VStack{
-                        Circle()
-                            .frame(width: 15)
-                            .foregroundColor(.clear)
+            if moviemodel.count == 0 {
+                Text("상영 시간표 준비 중입니다.")
+                    .foregroundColor(.white)
+                    .padding(20)
+            }
+            else {
+                ForEach(0..<moviemodel.count, id: \.self) { index in
+                    HStack(spacing: 10){
+                        VStack{
+                            Circle()
+                                .frame(width: 15)
+                                .foregroundColor(.clear)
+                                .overlay(
+                                    Circle()
+                                        .strokeBorder(Color.main)
+                                        .frame(width: 15))
+                            
+                            Rectangle()
+                                .frame(width: 1, height: 60)
+                                .foregroundColor(Color.main)
+                        }
+                        
+                        
+                        
+                        MovieSummaryInfoView(selectedTime: presentingDifferentTime(index: index), theatermodel: theatermodel, moviemodel: moviemodel, index: index)
+                            .padding()
                             .overlay(
-                                Circle()
+                                RoundedRectangle(cornerRadius: 15)
                                     .strokeBorder(Color.main)
-                                    .frame(width: 15))
-
-                        Rectangle()
-                            .frame(width: 1, height: 60)
-                            .foregroundColor(Color.main)
+                                    .frame(width: 320, height: 80)
+                            )
                     }
-                    
-                    
-                  
-                    MovieSummaryInfoView(selectedTime: presentingDifferentTime(index: index), theatermodel: theatermodel, moviemodel: moviemodel, index: index)
-                        .padding()
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 15)
-                                .strokeBorder(Color.main)
-                                .frame(width: 320, height: 80)
-                        )
                 }
             }
 //            .onReceive(moviemodel.$movieTitles) { _ in
@@ -107,7 +114,7 @@ struct MovieSummaryInfoView: View {
                     .padding(.horizontal, 5)
                     .frame(width: 60)
             }
-
+            
             VStack(alignment: .leading, spacing: 8){
                 Button(action: {
                     // 영화 제목 클릭 시 실행될 동작
@@ -141,7 +148,7 @@ struct MovieSummaryInfoView: View {
                 }
             }
             Button(action: {
-                            // 예매 버튼 클릭 시 실행될 동작
+                // 예매 버튼 클릭 시 실행될 동작
             }) {
                 Text("예매\n하기")
                     .foregroundColor(.white)
