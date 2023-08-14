@@ -69,7 +69,7 @@ struct MovieDetailView: View {
                 // 데이터 가져오기
                 moviemodel.fetch(cgid: "FE8EF4D2-F22D-4802-A39A-D58F23A29C1E", ssid: "", tokn: "", BrandCd: "indieart", CinemaCd: "000057", PlaySDT: "2023-07-02") { theaters in
                     if let theaters = theaters {
-                        print(theaters)
+                        print(theaters[0])
                     } else {
                         print("상영 정보를 가져오는데 실패했습니다.")
                     }

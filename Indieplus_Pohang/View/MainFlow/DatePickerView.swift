@@ -78,12 +78,12 @@ struct DateView: View {
                 }
                 Spacer(minLength: 10)
             }
-        }.onChange(of: selectedDate) {newValue in
-//            // selectedDate 값이 변경될 때 실행되는 로직
-//            print("Selected date changed: \(newValue)")
-//            print("on change \(moviemodel.movieTitles.count)")
+        }
+        .onAppear {
+            selectedDate = datemodel.dateToList(date: today)
+        }
+        .onChange(of: selectedDate) {newValue in
             
-            // 변경된 movieTitles와 count를 MoviePickerView로 전달
             movieTitles = moviemodel.movieTitles
             count = moviemodel.count
             
