@@ -34,7 +34,7 @@ struct MoviePickerView: View {
     var body: some View {
         VStack(spacing: 30){
             if moviemodel.count == 0 {
-                Text("상영 시간표 준비 중입니다.")
+                Text("오늘 상영 중인 영화는 없습니다.")
                     .foregroundColor(.white)
                     .padding(20)
             }

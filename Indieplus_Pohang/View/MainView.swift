@@ -12,6 +12,7 @@ struct MainView: View {
     @ObservedObject var posterModel = PosterViewModel()
     @ObservedObject var theaterModel = TheaterManager()
     @ObservedObject var movieModel = MoviePickerViewModel()
+    @ObservedObject var dateModel = DatePickerViewModel()
     
     var body: some View {
         NavigationView{
@@ -50,7 +51,7 @@ struct MainView: View {
                                 .background(Color.main)
                             
                             
-                            DatePickerView(theatermodel: theaterModel, moviemodel: movieModel)
+                            DatePickerView(theatermodel: theaterModel, moviemodel: movieModel, datemodel: dateModel)
                             
                             
                             MoviePickerView(theatermodel: theaterModel, moviemodel: movieModel)
