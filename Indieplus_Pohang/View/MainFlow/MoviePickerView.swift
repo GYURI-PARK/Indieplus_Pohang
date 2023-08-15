@@ -14,9 +14,9 @@ struct MoviePickerView: View {
     @ObservedObject var moviemodel: MoviePickerViewModel
 
     @State private var count = 0
-    @State private var movieTitles: [String] = []
-    @State private var movieTimes: [String] = []
-    @State private var movieEngTitles: [String] = []
+//    @State private var movieTitles: [String] = []
+//    @State private var movieTimes: [String] = []
+//    @State private var movieEngTitles: [String] = []
 
     func presentingDifferentTime(index: Int) -> String {
         if index == 0 {
@@ -54,8 +54,6 @@ struct MoviePickerView: View {
                                 .frame(width: 1, height: 60)
                                 .foregroundColor(Color.main)
                         }
-                        
-                        
                         
                         MovieSummaryInfoView(selectedTime: presentingDifferentTime(index: index), theatermodel: theatermodel, moviemodel: moviemodel, index: index)
                             .padding()
