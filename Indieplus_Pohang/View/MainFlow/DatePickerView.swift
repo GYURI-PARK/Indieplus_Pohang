@@ -29,7 +29,6 @@ struct DatePickerView: View {
 struct DateView: View {
     let today = Date()
     @State var selectedIndex = 0
-//    @State var dateList = Set<String>()
     @State var selectedDate = ""
     
     @StateObject var theatermodel: TheaterManager
@@ -81,12 +80,14 @@ struct DateView: View {
         }
         .onAppear {
             selectedDate = datemodel.dateToList(date: today)
+            moviemodel.getMovieDetail(date: selectedDate)
+            moviemodel.updateCount()
         }
-        .onChange(of: selectedDate) {newValue in
-            
-            movieTitles = moviemodel.movieTitles
-            count = moviemodel.count
-            
-        }
+//        .onChange(of: selectedDate) {newValue in
+//
+//            movieTitles = moviemodel.movieTitles
+//            count = moviemodel.count
+//
+//        }
     }
 }
