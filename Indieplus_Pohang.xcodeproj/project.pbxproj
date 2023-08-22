@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C1217ECA2A821F5F005C4868 /* DatePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1217EC92A821F5F005C4868 /* DatePickerViewModel.swift */; };
+		C1217ECD2A8C52D8005C4868 /* TicketingWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1217ECC2A8C52D8005C4868 /* TicketingWebView.swift */; };
+		C1217ECF2A8C5678005C4868 /* TicketingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1217ECE2A8C5678005C4868 /* TicketingViewModel.swift */; };
 		C12630AC2A471D0200F98E2A /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12630AB2A471D0200F98E2A /* Review.swift */; };
 		C12630B02A48B75600F98E2A /* PosterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12630AF2A48B75600F98E2A /* PosterViewModel.swift */; };
 		C186D12F2A529E080063E6CE /* MovieShowtimeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C186D12E2A529E080063E6CE /* MovieShowtimeInfo.swift */; };
@@ -36,6 +38,9 @@
 		2F319E6930E28FB7A798DD6C /* Pods-Indieplus_Pohang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Indieplus_Pohang.debug.xcconfig"; path = "Target Support Files/Pods-Indieplus_Pohang/Pods-Indieplus_Pohang.debug.xcconfig"; sourceTree = "<group>"; };
 		463E30FBC69F18F89F9B9DBD /* Pods-Indieplus_Pohang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Indieplus_Pohang.release.xcconfig"; path = "Target Support Files/Pods-Indieplus_Pohang/Pods-Indieplus_Pohang.release.xcconfig"; sourceTree = "<group>"; };
 		C1217EC92A821F5F005C4868 /* DatePickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewModel.swift; sourceTree = "<group>"; };
+		C1217ECB2A8C52A6005C4868 /* Indieplus-Pohang-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Indieplus-Pohang-Info.plist"; sourceTree = SOURCE_ROOT; };
+		C1217ECC2A8C52D8005C4868 /* TicketingWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketingWebView.swift; sourceTree = "<group>"; };
+		C1217ECE2A8C5678005C4868 /* TicketingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketingViewModel.swift; sourceTree = "<group>"; };
 		C12630AB2A471D0200F98E2A /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Review.swift; path = Indieplus_Pohang/View/Review.swift; sourceTree = SOURCE_ROOT; };
 		C12630AF2A48B75600F98E2A /* PosterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterViewModel.swift; sourceTree = "<group>"; };
 		C186D12E2A529E080063E6CE /* MovieShowtimeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieShowtimeInfo.swift; sourceTree = "<group>"; };
@@ -80,6 +85,7 @@
 				C1B7F79B2A4EE1B4001F1BF9 /* TheaterManager.swift */,
 				C12630AF2A48B75600F98E2A /* PosterViewModel.swift */,
 				C1217EC92A821F5F005C4868 /* DatePickerViewModel.swift */,
+				C1217ECE2A8C5678005C4868 /* TicketingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -109,6 +115,7 @@
 				C1BED68D2A3D8209007B6A5C /* FastTicketingView.swift */,
 				C1BED68B2A3CC663007B6A5C /* DailyReviewView.swift */,
 				C1BED6912A3DCBB1007B6A5C /* BottomBarView.swift */,
+				C1217ECC2A8C52D8005C4868 /* TicketingWebView.swift */,
 			);
 			path = SubPage;
 			sourceTree = "<group>";
@@ -134,6 +141,7 @@
 		C1BED6712A3AF699007B6A5C /* Indieplus_Pohang */ = {
 			isa = PBXGroup;
 			children = (
+				C1217ECB2A8C52A6005C4868 /* Indieplus-Pohang-Info.plist */,
 				C1217EC52A81ED9D005C4868 /* ViewModel */,
 				C1BED6862A3C2716007B6A5C /* Extension */,
 				C1BED6822A3AF834007B6A5C /* Model */,
@@ -330,6 +338,7 @@
 				C186D12F2A529E080063E6CE /* MovieShowtimeInfo.swift in Sources */,
 				C1B7F7832A497294001F1BF9 /* MoviePickerView.swift in Sources */,
 				C1BED6752A3AF699007B6A5C /* ContentView.swift in Sources */,
+				C1217ECF2A8C5678005C4868 /* TicketingViewModel.swift in Sources */,
 				C186D1312A5560570063E6CE /* MoviePickerViewModel.swift in Sources */,
 				C12630B02A48B75600F98E2A /* PosterViewModel.swift in Sources */,
 				C1B7F79C2A4EE1B4001F1BF9 /* TheaterManager.swift in Sources */,
@@ -338,6 +347,7 @@
 				C1217ECA2A821F5F005C4868 /* DatePickerViewModel.swift in Sources */,
 				C1BED68E2A3D8209007B6A5C /* FastTicketingView.swift in Sources */,
 				C1B7F7862A4972B7001F1BF9 /* Shape+Extension.swift in Sources */,
+				C1217ECD2A8C52D8005C4868 /* TicketingWebView.swift in Sources */,
 				C1BED6852A3AFD93007B6A5C /* MainView.swift in Sources */,
 				C1B7F79E2A4EF1F4001F1BF9 /* TheaterVO.swift in Sources */,
 				C1BED68C2A3CC663007B6A5C /* DailyReviewView.swift in Sources */,
@@ -475,6 +485,7 @@
 				DEVELOPMENT_TEAM = XF4GNZL7MP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Indieplus-Pohang-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -505,6 +516,7 @@
 				DEVELOPMENT_TEAM = XF4GNZL7MP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Indieplus-Pohang-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -13,6 +13,7 @@ struct MainView: View {
     @ObservedObject var theaterModel = TheaterManager()
     @ObservedObject var movieModel = MoviePickerViewModel()
     @ObservedObject var dateModel = DatePickerViewModel()
+    @ObservedObject var WebViewModel = TicketingWebViewModel()
     
     var body: some View {
         NavigationView{
@@ -64,7 +65,7 @@ struct MainView: View {
                     }
                 }
                 
-                FastTicketingView()
+                FastTicketingView(viewModel: WebViewModel)
                 
                 BottomBarView()
             }
