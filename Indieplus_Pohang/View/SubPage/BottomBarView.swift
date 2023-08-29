@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct BottomBarView: View {
+    @ObservedObject var viewModel: TicketingWebViewModel
     
-    init() {
+    init(viewModel: TicketingWebViewModel) {
+        
+        self.viewModel = viewModel
+        
+        DispatchQueue.main.async {
             //Use this if NavigationBarTitle is with Large Font
             UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color.main)]
-
+            
             //Use this if NavigationBarTitle is with displayMode = .inline
             UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color.main)]
         }
+    }
     
     var body: some View {
             ZStack {
@@ -58,21 +64,25 @@ struct BottomBarView: View {
                 }
                 .offset(x: 130, y: -20)
                 
-                ZStack{
-                    Circle()
-                        .foregroundColor(.black)
-                        .frame(width: 60)
-                        .overlay(Circle()
-                            .strokeBorder(Color.main, lineWidth: 1.3)
-                            .frame(width: 60))
-                    
-                    Image(systemName: "calendar")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 35, height: 28)
-                        .foregroundColor(.main)
-                    
+                
+                NavigationLink(destination: TicketingWebView(urlToLoad: "https://www.dtryx.com/cinema/main.do?cgid=FE8EF4D2-F22D-4802-A39A-D58F23A29C1E&BrandCd=indieart&CinemaCd=000057", viewModel: viewModel)) {
+                    ZStack{
+                        Circle()
+                            .foregroundColor(.black)
+                            .frame(width: 60)
+                            .overlay(Circle()
+                                .strokeBorder(Color.main, lineWidth: 1.3)
+                                .frame(width: 60))
+                        
+                        Image(systemName: "calendar")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 35, height: 28)
+                            .foregroundColor(.main)
+                        
+                    }
                 }
+                
                 .offset(x: 0, y: -50)
                 
             }
@@ -80,8 +90,8 @@ struct BottomBarView: View {
     }
 }
 
-struct BottomBarView_Previews: PreviewProvider {
-    static var previews: some View {
-        BottomBarView()
-    }
-}
+//struct BottomBarView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        BottomBarView()
+//    }
+//}

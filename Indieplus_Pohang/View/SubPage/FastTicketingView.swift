@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct FastTicketingView: View {
+    @ObservedObject var viewModel: TicketingWebViewModel
+    
     var body: some View {
-        Button {} label : {
+        NavigationLink(destination: TicketingWebView(urlToLoad: "https://www.dtryx.com/cinema/main.do?cgid=FE8EF4D2-F22D-4802-A39A-D58F23A29C1E&BrandCd=indieart&CinemaCd=000057", viewModel: viewModel)) {
             ZStack {
                 Rectangle()
                     .frame(width: 100, height: 40)
@@ -24,8 +26,8 @@ struct FastTicketingView: View {
     }
 }
 
-struct FastTicketingView_Previews: PreviewProvider {
-    static var previews: some View {
-        FastTicketingView()
-    }
-}
+//struct FastTicketingView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        FastTicketingView()
+//    }
+//}

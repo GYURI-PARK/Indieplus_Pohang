@@ -11,7 +11,6 @@ struct PosterView: View {
     
     @ObservedObject var model: PosterViewModel
 
-    
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
@@ -41,9 +40,16 @@ struct PosterView: View {
             }
         }
         .onAppear {
-            // PosterViewController에서 데이터를 가져오는 작업을 시작합니다.
-            model.fetchHTMLParsingResult()
+            Task {
+                model.fetchHTMLParsingResult()
+            }
         }
+//        .onAppear {
+//            model.fetchHTMLParsingResult()
+//        }
+//        .task {
+//            await model.fetchHTMLParsingResult()
+//        }
     }
 }
 
