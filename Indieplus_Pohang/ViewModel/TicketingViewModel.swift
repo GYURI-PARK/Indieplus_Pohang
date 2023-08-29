@@ -11,5 +11,7 @@ import Combine
 class TicketingWebViewModel: ObservableObject {
     var foo = PassthroughSubject<Bool, Never>()
     var bar = PassthroughSubject<Bool, Never>()
+    
+    var cancellables: Set<AnyCancellable> = []
 }
 

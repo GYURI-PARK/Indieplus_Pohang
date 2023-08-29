@@ -6,37 +6,27 @@
 //
 
 import SwiftUI
+import Combine
 import WebKit
 
 struct TicketingWebView: UIViewRepresentable {
-    
     var urlToLoad: String
     @ObservedObject var viewModel: TicketingWebViewModel
     
-    
-    // 뷰 객체를 생성하고 초기 상태를 구성합니다. 딱 한 번만 호출됩니다.
     func makeUIView(context: Context) -> WKWebView {
-        
-        // unwrapping
-        guard let url = URL(string: self.urlToLoad) else {
-            return WKWebView()
-        }
-        
-        // 웹뷰 인스턴스 생성
         let webView = WKWebView()
-        
-        // WebView 로드
-        webView.load(URLRequest(url: url))
         return webView
     }
-    
-    // update UIView
-    func updateUIView(_ uiView: WKWebView, context: UIViewRepresentableContext<TicketingWebView>) {
-        
+
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        guard let url = URL(string: urlToLoad) else { return }
+
+        URLSession.shared.dataTaskPublisher(for: url)
+            .map { $0.data }
+            .receive(on: DispatchQueue.main) // UI 업데이트는 메인 스레드에서 수행
+            .sink(receiveCompletion: { _ in }) { data in
+                uiView.load(data, mimeType: "text/html", characterEncodingName: "utf-8", baseURL: url)
+            }
+            .store(in: &viewModel.cancellables) // 뷰 모델의 cancellables에 저장
     }
-    
-    // 탐색 변경을 수락 또는 거부하고 탐색 요청의 진행 상황을 추적
-//    class Coordinator : NSObject, WKNavigationDelegate {
-//        
-//    }
 }

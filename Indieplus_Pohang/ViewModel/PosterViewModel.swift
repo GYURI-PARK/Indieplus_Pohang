@@ -5,9 +5,9 @@
 //  Created by GYURI PARK on 2023/06/26.
 //
 
-//import Foundation
-//import SwiftSoup
-//
+import Foundation
+import SwiftSoup
+
 //class PosterViewModel: ObservableObject {
 //    @Published var movieData: [[String: String]] = []
 //    @Published var movieCount = 0
@@ -125,7 +125,7 @@
 //
 //                if (200..<300).contains(response.statusCode), let data = data {
 //                    do {
-//                        let html = try String(data: data, encoding: .utf8)
+//                        let html = String(data: data, encoding: .utf8)
 //                        let doc: Document = try SwiftSoup.parse(html!)
 //
 //                        let thumElements: Elements = try doc.select(".thum")

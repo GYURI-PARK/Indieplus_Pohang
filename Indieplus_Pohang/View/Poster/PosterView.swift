@@ -41,7 +41,7 @@ struct PosterView: View {
         }
         .onAppear {
             Task {
-                await model.fetchHTMLParsingResult()
+                model.fetchHTMLParsingResult()
             }
         }
 //        .onAppear {
