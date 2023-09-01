@@ -14,6 +14,7 @@ struct MainView: View {
     @ObservedObject var movieModel = MoviePickerViewModel()
     @ObservedObject var dateModel = DatePickerViewModel()
     @ObservedObject var WebViewModel = TicketingWebViewModel()
+    @ObservedObject var reViewModel = DailyReviewViewModel()
         
     var body: some View {
         NavigationView{
@@ -51,14 +52,13 @@ struct MainView: View {
                                 .frame(width: 350, height: 1)
                                 .background(Color.main)
                             
-                            
                             DatePickerView(theatermodel: theaterModel, moviemodel: movieModel, datemodel: dateModel)
-                            
                             
                             MoviePickerView(theatermodel: theaterModel, moviemodel: movieModel)
                             
-                            
-                            DailyReviewView()
+                            Group {
+                                DailyReviewView(vm: reViewModel)
+                            }
                             
                             Spacer(minLength: 45)
                         }
