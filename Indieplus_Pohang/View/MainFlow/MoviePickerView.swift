@@ -12,6 +12,7 @@ struct MoviePickerView: View {
 
     @ObservedObject var theatermodel: TheaterManager
     @ObservedObject var moviemodel: MoviePickerViewModel
+    @ObservedObject var vm: TicketingWebViewModel
 
     @State private var count = 0
 //    @State private var movieTitles: [String] = []
@@ -55,7 +56,7 @@ struct MoviePickerView: View {
                                 .foregroundColor(Color.main)
                         }
                         
-                        MovieSummaryInfoView(selectedTime: presentingDifferentTime(index: index), theatermodel: theatermodel, moviemodel: moviemodel, index: index)
+                        MovieSummaryInfoView(selectedTime: presentingDifferentTime(index: index), theatermodel: theatermodel, moviemodel: moviemodel, vm: vm, index: index)
                             .padding()
                             .overlay(
                                 RoundedRectangle(cornerRadius: 15)
@@ -94,6 +95,8 @@ struct MovieSummaryInfoView: View {
     var selectedTime: String
     @ObservedObject var theatermodel: TheaterManager
     @ObservedObject var moviemodel: MoviePickerViewModel
+    @ObservedObject var vm: TicketingWebViewModel
+    
     var index: Int
 
     var body: some View {
@@ -145,9 +148,15 @@ struct MovieSummaryInfoView: View {
                         .frame(width: 150, alignment: .leading)
                 }
             }
-            Button(action: {
-                // 예매 버튼 클릭 시 실행될 동작
-            }) {
+//            Button(action: {
+//                // 예매 버튼 클릭 시 실행될 동작
+//            }) {
+//                Text("예매\n하기")
+//                    .foregroundColor(.white)
+//                    .frame(width: 70)
+//                    .padding(.leading, 10)
+//            }
+            NavigationLink(destination: TicketingWebView(urlToLoad: "https://www.dtryx.com/cinema/main.do?cgid=FE8EF4D2-F22D-4802-A39A-D58F23A29C1E&BrandCd=indieart&CinemaCd=000057", viewModel: vm)) {
                 Text("예매\n하기")
                     .foregroundColor(.white)
                     .frame(width: 70)

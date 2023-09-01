@@ -54,7 +54,7 @@ struct MainView: View {
                             
                             DatePickerView(theatermodel: theaterModel, moviemodel: movieModel, datemodel: dateModel)
                             
-                            MoviePickerView(theatermodel: theaterModel, moviemodel: movieModel)
+                            MoviePickerView(theatermodel: theaterModel, moviemodel: movieModel, vm: WebViewModel)
                             
                             Group {
                                 DailyReviewView(vm: reViewModel)

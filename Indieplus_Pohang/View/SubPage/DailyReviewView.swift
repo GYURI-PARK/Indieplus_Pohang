@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct DailyReviewView: View {
+    
+    @StateObject var vm: DailyReviewViewModel
+    
     var body: some View {
         VStack(alignment: .leading){
             Text("Daily REVIEW")
@@ -20,14 +23,20 @@ struct DailyReviewView: View {
                     .opacity(0.5)
                     .frame(width: 330, height: 100)
                 
-                RandomReviewView()
+                RandomReviewView(vm: vm)
                     .frame(width: 310, height: 90)
+//                    .onChange(vm.$isChanged) { newValue in
+//                        print(newValue)
+//                    }
             }
         }
     }
 }
 
 struct RandomReviewView: View {
+    
+    @ObservedObject var vm: DailyReviewViewModel
+    
     var body: some View {
         let review = ReviewDataModel.instance.reviews.randomElement()
         let index = ReviewDataModel.instance.reviews.firstIndex(of: review ?? "")
@@ -45,8 +54,8 @@ struct RandomReviewView: View {
     }
 }
 
-struct DailyReviewView_Previews: PreviewProvider {
-    static var previews: some View {
-        DailyReviewView()
-    }
-}
+//struct DailyReviewView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DailyReviewView()
+//    }
+//}
