@@ -25,9 +25,6 @@ struct DailyReviewView: View {
                 
                 RandomReviewView(vm: vm)
                     .frame(width: 310, height: 90)
-//                    .onChange(vm.$isChanged) { newValue in
-//                        print(newValue)
-//                    }
             }
         }
     }
@@ -36,20 +33,32 @@ struct DailyReviewView: View {
 struct RandomReviewView: View {
     
     @ObservedObject var vm: DailyReviewViewModel
+    @State private var review: String = ReviewDataModel.instance.reviews[0]
+    @State private var index: Int = 0
+    @State private var movie: String = ReviewDataModel.instance.movies[0]
+
     
     var body: some View {
-        let review = ReviewDataModel.instance.reviews.randomElement()
-        let index = ReviewDataModel.instance.reviews.firstIndex(of: review ?? "")
-        let movie = ReviewDataModel.instance.movies[index ?? 0]
         
         VStack{
-            Text(review ?? "")
+            Text(review)
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
                 .padding(5)
             Text(movie)
                 .foregroundColor(.white)
                 .font(.system(size: 13))
+        }
+        .onAppear {
+            if vm.isSameDay == true {
+                review = vm.prevReview
+                index = vm.prevIndex
+                movie = vm.prevMovie
+            } else {
+                review = vm.changeDay()
+                index = ReviewDataModel.instance.reviews.firstIndex(of: review)!
+                movie = ReviewDataModel.instance.movies[index]
+            }
         }
     }
 }

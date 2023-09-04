@@ -9,39 +9,50 @@ import Foundation
 
 class DailyReviewViewModel: ObservableObject {
     
-    @Published var date: Date
-    @Published var isChanged: Bool = true
-    var previousDate: Date
-    var currentReview: String = ""
-
+    @Published var isSameDay: Bool = false
+    @Published var prevMovie: String = ReviewDataModel.instance.movies[0]
+    @Published var prevIndex: Int = 0
+    @Published var prevReview: String = ReviewDataModel.instance.reviews[0]
+    @Published var nowMovie: String = ReviewDataModel.instance.movies[0]
+    @Published var nowIndex: Int = 0
+    @Published var nowReview: String = ReviewDataModel.instance.reviews[0]
+    @Published var prev: DateFormatter
+    @Published var today: DateFormatter
+    
     init() {
-        self.date = Date()
-        self.previousDate = Date()
-        self.currentReview = getRandomReview()
+        self.prev = DateFormatter()
+        self.today = DateFormatter()
     }
     
-    // 일자만 추출하는 함수 작성
-    func isChangeDate(date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd"
-
-        return dateFormatter.string(from: date)
+    private func formatTime(date: DateFormatter) -> DateFormatter {
+        date.dateFormat = "dd"
+        return date
     }
     
-    func checkDate(day: String) -> Bool {
-        if (isChangeDate(date: previousDate) != isChangeDate(date: Date())) && isChanged == true {
-             isChanged = false
+    private func getTimeAsString(date: DateFormatter) -> String {
+        return date.string(from: Date())
+    }
+    
+    func checkDay() -> Bool {
+        if getTimeAsString(date: formatTime(date: prev)) == getTimeAsString(date: formatTime(date: today)) {
+            isSameDay = true
+        } else {
+            isSameDay = false
+            prev = formatTime(date: today)
         }
-        else if (isChangeDate(date: previousDate) != isChangeDate(date: Date())) && isChanged == false {
-            isChanged = true
-        }
-        return isChanged
+        return isSameDay
     }
     
-    // random review 선택 함수
-    func getRandomReview() -> String {
-        return ReviewDataModel.instance.reviews.randomElement() ?? ""
+    // 날짜가 다를경우 checkDay = false
+    func changeDay() ->  String {
+        prevMovie = nowMovie
+        prevIndex = nowIndex
+        prevReview = nowReview
+        
+        nowReview = ReviewDataModel.instance.reviews.randomElement()!
+        nowIndex = ReviewDataModel.instance.reviews.firstIndex(of: nowReview)!
+        nowMovie = ReviewDataModel.instance.movies[nowIndex]
+        
+        return nowReview
     }
-    
-    // date가 isChangeDate(previousDate) -> isChangeDate(Date) 로 들어가 변경될때마다 업데이트
 }
