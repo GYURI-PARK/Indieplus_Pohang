@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct TheaterView: View {
+    
+    @Environment(\.dismiss) private var dismiss
+    
     var body: some View {
         NavigationView{
             ZStack {
@@ -34,7 +37,19 @@ struct TheaterView: View {
                 }
             }
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: backButton)
     }
+    
+    var backButton: some View {
+            Button(action: {
+                dismiss()
+            }) {
+                Image(systemName: "chevron.left")
+                    .imageScale(.large)
+                    .foregroundColor(Color.main)
+            }
+        }
 }
 
 struct MainStoryView: View {
