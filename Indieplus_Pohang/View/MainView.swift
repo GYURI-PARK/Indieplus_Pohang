@@ -17,8 +17,8 @@ struct MainView: View {
     @ObservedObject var reViewModel = DailyReviewViewModel()
         
     var body: some View {
-        NavigationView{
-            ZStack{
+        NavigationView {
+            ZStack {
                 Rectangle()
                     .fill(LinearGradient(
                         gradient: .init(colors: [Color.main, .black ]),
@@ -79,11 +79,14 @@ struct titleText: View {
         
         HStack{
         
-            let combinedText = Text("초당 24프레임")
+            let combinedText = 
+            
+            Text("초당 24프레임")
                 .font(.system(size: 18, weight: .semibold))
-                .foregroundColor(.black) +
+                .foregroundColor(.black)
+            +
                 Text("의 꿈을 꾸는 곳")
-                .font(.system(size: 18, weight: .regular))
+                .font(.custom(FontsManager.Pretendard.medium, size: 18))
                 .foregroundColor(.black)
             
             Text("\(combinedText)")

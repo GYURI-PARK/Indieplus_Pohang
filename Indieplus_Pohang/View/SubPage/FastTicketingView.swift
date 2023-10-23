@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FastTicketingView: View {
     @ObservedObject var viewModel: TicketingWebViewModel
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         NavigationLink(destination: TicketingWebView(urlToLoad: "https://www.dtryx.com/cinema/main.do?cgid=FE8EF4D2-F22D-4802-A39A-D58F23A29C1E&BrandCd=indieart&CinemaCd=000057", viewModel: viewModel)) {
@@ -22,7 +23,8 @@ struct FastTicketingView: View {
                     .font(.system(size: 17, weight: .bold))
                     .foregroundColor(.black)
             }
-        }.offset(x: 151, y: 318)
+        }
+        .offset(x: 151, y: 318)
     }
 }
 
