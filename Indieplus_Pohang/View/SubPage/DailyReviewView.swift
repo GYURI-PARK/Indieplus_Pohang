@@ -13,10 +13,11 @@ struct DailyReviewView: View {
     
     var body: some View {
         VStack(alignment: .leading){
-            Text("Random Review")
-                .foregroundColor(.white)
-                .font(.subhead3_1)
-            
+//            Text("Take It Easy")
+//                .foregroundColor(.white)
+//                .font(.subhead3_1)
+//                .padding(.bottom, 10)
+//            
             ZStack{
                 RoundedRectangle(cornerRadius: 15)
                     .foregroundColor(Color.main)
@@ -45,7 +46,7 @@ struct RandomReviewView: View {
                 .font(.body3)
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
-                .padding(5)
+                .padding(10)
             Text(movie)
                 .foregroundColor(.white)
                 .font(.subhead1)
