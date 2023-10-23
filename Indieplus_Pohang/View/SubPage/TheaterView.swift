@@ -12,7 +12,7 @@ struct TheaterView: View {
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        NavigationView{
+        NavigationView {
             ZStack {
                 Rectangle()
                     .fill(LinearGradient(
@@ -22,18 +22,21 @@ struct TheaterView: View {
                     ))
                     .ignoresSafeArea()
                 
-                
-                ScrollView(showsIndicators: false) {
-                    VStack(spacing: 80) {
-                        
-                        Spacer()
-                        
-                        MainStoryView()
-                        
-                        SubStoryView()
-                        
-                        FooterView()
+                VStack {
+                    ScrollView(showsIndicators: false) {
+                        VStack(spacing: 40) {
+                            
+                            Spacer()
+                            MainStoryView()
+                            
+                            Spacer()
+                            
+                            SubStoryView()
+//                                .padding(.top, 50)
+                            Spacer()
+                        }
                     }
+                    FooterView()
                 }
             }
         }
@@ -58,7 +61,7 @@ struct MainStoryView: View {
         Text("스쳐 지나가는 영화가 아닌 \n 삶에서 계속되는 이야기로, \n\n 우리는 다양성을 받아들이고,\n 새로운 시각과 사유를 경험하며 \n 삶의 활력을 불어넣습니다. \n\n 평범한 일상에서 스치고 지나갔던 순간들과 \n 그 안에 존재하는 사람들의 \n 소중한 이야기를 수집하고 소장하는 곳 \n 시간을 얼어붙이고 \n 순간을 아름답게 담아내는 곳")
             .multilineTextAlignment(.center)
             .foregroundColor(.white)
-            .font(.system(size: 18, weight: .regular))
+            .font(.subhead3_1)
             .lineSpacing(13)
     }
 }
@@ -67,7 +70,7 @@ struct SubStoryView: View {
     var body: some View {
         Text("초당 24프레임의 꿈을 꾸죠 \n 생생하고 따뜻하게 때론 생경하게")
             .foregroundColor(.main)
-            .font(.system(size: 18, weight: .semibold))
+            .font(.subhead2_1)
             .lineSpacing(13)
             .multilineTextAlignment(.center)
     }

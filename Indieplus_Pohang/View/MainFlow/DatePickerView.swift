@@ -66,11 +66,11 @@ struct DateView: View {
                         
                         VStack(spacing: 2){
                             Text(datemodel.dateToString(date: date))
-                                .font(.system(size: 20, weight: .bold))
+                                .font(.calendar1)
                                 .foregroundColor(index == selectedIndex ? .black : Color.main)
                             
                             Text(datemodel.dayToString(date: date))
-                                .font(.system(size: 15, weight: .bold))
+                                .font(.calendar2)
                                 .foregroundColor(index == selectedIndex ? .black : Color.main)
                         }
                     }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BottomBarView: View {
     @ObservedObject var viewModel: TicketingWebViewModel
+    @State var isModalShown = false
     
     init(viewModel: TicketingWebViewModel) {
         
@@ -37,35 +38,40 @@ struct BottomBarView: View {
                         .accentColor(.main)
                 } label : {
                     VStack{
-                        Image(systemName: "theatermasks.fill")
+                        Image(systemName: "house")
                             .resizable()
-                            .frame(width: 40, height: 28)
-                            .padding(.top, 3)
+                            .scaledToFit()
+                            .frame(width: 36)
+//                            .padding(.top, 3)
                         
-                        Text("영화관")
-                            .font(.system(size: 12, weight: .bold))
+//                        Text("영화관")
+//                            .font(.system(size: 12, weight: .bold))
                     }
                     .foregroundColor(.black)
                 }
                 .offset(x: -130, y: -20)
                 
-                Button {} label : {
+                Button {
+                    
+                } label : {
                     VStack{
                         Image(systemName: "person.fill")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 40, height: 28)
-                            .padding(.top, 3)
+                            .frame(width: 28)
+//                            .padding(.top, 3)
                         
-                        Text("마이")
-                            .font(.system(size: 12, weight: .bold))
+//                        Text("마이")
+//                            .font(.system(size: 12, weight: .bold))
                     }
                     .foregroundColor(.black)
                 }
                 .offset(x: 130, y: -20)
                 
                 
-                NavigationLink(destination: TicketingWebView(urlToLoad: "https://www.dtryx.com/cinema/main.do?cgid=FE8EF4D2-F22D-4802-A39A-D58F23A29C1E&BrandCd=indieart&CinemaCd=000057", viewModel: viewModel)) {
+                Button(action: {
+                    isModalShown.toggle()
+                }) {
                     ZStack{
                         Circle()
                             .foregroundColor(.black)
@@ -87,6 +93,10 @@ struct BottomBarView: View {
                 
             }
             .offset(y: 400)
+            .sheet(isPresented: $isModalShown) {
+                TimeTableModal()
+                    .presentationDetents([.medium])
+            }
     }
 }
 

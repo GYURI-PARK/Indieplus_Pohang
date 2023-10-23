@@ -13,9 +13,9 @@ struct DailyReviewView: View {
     
     var body: some View {
         VStack(alignment: .leading){
-            Text("Daily REVIEW")
+            Text("Random Review")
                 .foregroundColor(.white)
-                .font(.system(size: 18, weight: .semibold))
+                .font(.subhead3_1)
             
             ZStack{
                 RoundedRectangle(cornerRadius: 15)
@@ -42,12 +42,13 @@ struct RandomReviewView: View {
         
         VStack{
             Text(review)
+                .font(.body3)
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
                 .padding(5)
             Text(movie)
                 .foregroundColor(.white)
-                .font(.system(size: 13))
+                .font(.subhead1)
         }
         .onAppear {
             if vm.isSameDay == true {

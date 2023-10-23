@@ -17,7 +17,7 @@ class TheaterManager: ObservableObject {
     }
     
     func fetch(cgid: String, ssid: String?, tokn: String?, BrandCd: String, CinemaCd: String, PlaySDT: String, completion: @escaping ([TheaterVO]?) -> Void) {
-        let param = "cgid&=\(cgid)&ssid=\(ssid)&tokn=\(tokn)&BrandCd=\(BrandCd)&CinemaCd=\(CinemaCd)&PlaySDT=\(PlaySDT)"
+        let param = "cgid&=\(cgid)&ssid=\(String(describing: ssid))&tokn=\(String(describing: tokn))&BrandCd=\(BrandCd)&CinemaCd=\(CinemaCd)&PlaySDT=\(PlaySDT)"
         guard let paramData = param.data(using: .utf8)else{
             NSLog("TheaterMegaManager paramData가 nil 입니다.")
             return
@@ -26,7 +26,7 @@ class TheaterManager: ObservableObject {
         performRequest(with: url, paramData:paramData) { theaters in
                 if let theaters = theaters {
                     // theaters를 출력 또는 사용
-                    print(theaters)
+//                    print(theaters)
                 } else {
                     print("상영 정보를 가져오는데 실패했습니다.")
                 }
