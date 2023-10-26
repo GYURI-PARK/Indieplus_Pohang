@@ -12,6 +12,7 @@
 		C1217ECF2A8C5678005C4868 /* TicketingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1217ECE2A8C5678005C4868 /* TicketingViewModel.swift */; };
 		C12630AC2A471D0200F98E2A /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12630AB2A471D0200F98E2A /* Review.swift */; };
 		C12630B02A48B75600F98E2A /* PosterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12630AF2A48B75600F98E2A /* PosterViewModel.swift */; };
+		C157600E2AEAEA590089FFE5 /* TimeTableModalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157600D2AEAEA590089FFE5 /* TimeTableModalModel.swift */; };
 		C186D12F2A529E080063E6CE /* MovieShowtimeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C186D12E2A529E080063E6CE /* MovieShowtimeInfo.swift */; };
 		C186D1312A5560570063E6CE /* MoviePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C186D1302A5560570063E6CE /* MoviePickerViewModel.swift */; };
 		C19AFB002AE6AA410037A5F5 /* TimeTableModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19AFAFF2AE6AA410037A5F5 /* TimeTableModal.swift */; };
@@ -55,6 +56,7 @@
 		C1217ECE2A8C5678005C4868 /* TicketingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketingViewModel.swift; sourceTree = "<group>"; };
 		C12630AB2A471D0200F98E2A /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Review.swift; path = Indieplus_Pohang/View/Review.swift; sourceTree = SOURCE_ROOT; };
 		C12630AF2A48B75600F98E2A /* PosterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterViewModel.swift; sourceTree = "<group>"; };
+		C157600D2AEAEA590089FFE5 /* TimeTableModalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableModalModel.swift; sourceTree = "<group>"; };
 		C186D12E2A529E080063E6CE /* MovieShowtimeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieShowtimeInfo.swift; sourceTree = "<group>"; };
 		C186D1302A5560570063E6CE /* MoviePickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePickerViewModel.swift; sourceTree = "<group>"; };
 		C19AFAFF2AE6AA410037A5F5 /* TimeTableModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableModal.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				C1217EC92A821F5F005C4868 /* DatePickerViewModel.swift */,
 				C1217ECE2A8C5678005C4868 /* TicketingViewModel.swift */,
 				C1B130922AA0F20F00D39345 /* DailyReviewViewModel.swift */,
+				C157600D2AEAEA590089FFE5 /* TimeTableModalModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				C1BED68C2A3CC663007B6A5C /* DailyReviewView.swift in Sources */,
 				C1BED6732A3AF699007B6A5C /* Indieplus_PohangApp.swift in Sources */,
 				C12630AC2A471D0200F98E2A /* Review.swift in Sources */,
+				C157600E2AEAEA590089FFE5 /* TimeTableModalModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

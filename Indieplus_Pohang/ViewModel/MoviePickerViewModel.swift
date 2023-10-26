@@ -36,9 +36,6 @@ class MoviePickerViewModel: ObservableObject {
                         self.movieTimes = sortedTheaters.map { $0.StartTime }
                         self.movieEngTitles = sortedTheaters.map { $0.MovieNmEng ?? "" }
                         self.updateCount()
-                        print("정렬된 리스트", self.movieTitles)
-                        print("개수", self.movieTitles.count)
-                        print("영어", self.movieEngTitles)
                     } catch {
                         print("정렬에 실패했습니다: \(error.localizedDescription)")
                     }
@@ -46,6 +43,8 @@ class MoviePickerViewModel: ObservableObject {
             }
         }
     }
+    
+    // 오늘 날짜를 받아서 오늘 영화들만 보여주는 함수 구현
     
     func updateCount() {
         DispatchQueue.main.async {

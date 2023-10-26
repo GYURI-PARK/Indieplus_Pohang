@@ -9,11 +9,13 @@ import SwiftUI
 
 struct BottomBarView: View {
     @ObservedObject var viewModel: TicketingWebViewModel
+    @ObservedObject var moviemodel: MoviePickerViewModel
     @State var isModalShown = false
     
-    init(viewModel: TicketingWebViewModel) {
+    init(viewModel: TicketingWebViewModel, moviemodel: MoviePickerViewModel) {
         
         self.viewModel = viewModel
+        self.moviemodel = moviemodel
         
         DispatchQueue.main.async {
             //Use this if NavigationBarTitle is with Large Font
@@ -94,8 +96,8 @@ struct BottomBarView: View {
             }
             .offset(y: 400)
             .sheet(isPresented: $isModalShown) {
-                TimeTableModal()
-                    .presentationDetents([.medium])
+                TimeTableModal(moviemodel: moviemodel)
+                    .presentationDetents([.height(150)])
             }
     }
 }

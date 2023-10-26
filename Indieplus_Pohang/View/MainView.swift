@@ -67,7 +67,7 @@ struct MainView: View {
                 
                 FastTicketingView(viewModel: WebViewModel)
                 
-                BottomBarView(viewModel: WebViewModel)
+                BottomBarView(viewModel: WebViewModel, moviemodel: movieModel)
             }
         }
         .accentColor(.main)
