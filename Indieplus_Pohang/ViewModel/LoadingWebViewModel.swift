@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class TicketingWebViewModel: ObservableObject {
+class LoadingWebViewModel: ObservableObject {
     var foo = PassthroughSubject<Bool, Never>()
     var bar = PassthroughSubject<Bool, Never>()
     

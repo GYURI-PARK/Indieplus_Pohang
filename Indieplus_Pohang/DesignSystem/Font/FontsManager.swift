@@ -44,4 +44,6 @@ extension Font {
     
     static let calendar1 = Font.custom(FontsManager.Pretendard.bold, size: 20)
     static let calendar2 = Font.custom(FontsManager.Pretendard.bold, size: 15)
+    
+    static let modal_txt = Font.custom(FontsManager.Pretendard.bold, size: 18)
 }

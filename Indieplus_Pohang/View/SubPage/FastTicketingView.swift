@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct FastTicketingView: View {
-    @ObservedObject var viewModel: TicketingWebViewModel
+    @ObservedObject var viewModel: LoadingWebViewModel
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        NavigationLink(destination: TicketingWebView(urlToLoad: "https://www.dtryx.com/cinema/main.do?cgid=FE8EF4D2-F22D-4802-A39A-D58F23A29C1E&BrandCd=indieart&CinemaCd=000057", viewModel: viewModel)) {
+        NavigationLink(destination: LoadingWebView(urlToLoad: "https://www.dtryx.com/cinema/main.do?cgid=FE8EF4D2-F22D-4802-A39A-D58F23A29C1E&BrandCd=indieart&CinemaCd=000057", viewModel: viewModel)) {
             ZStack {
                 Rectangle()
                     .frame(width: 100, height: 40)

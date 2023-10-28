@@ -13,7 +13,7 @@ struct MainView: View {
     @ObservedObject var theaterModel = TheaterManager()
     @ObservedObject var movieModel = MoviePickerViewModel()
     @ObservedObject var dateModel = DatePickerViewModel()
-    @ObservedObject var WebViewModel = TicketingWebViewModel()
+    @ObservedObject var WebViewModel = LoadingWebViewModel()
     @ObservedObject var reViewModel = DailyReviewViewModel()
         
     var body: some View {
