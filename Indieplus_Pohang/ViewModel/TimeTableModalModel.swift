@@ -1,13 +1,19 @@
 //
-//  MovieManager.swift
+//  TimeTableModalModel.swift
 //  Indieplus_Pohang
 //
-//  Created by GYURI PARK on 2023/07/05.
+//  Created by GYURI PARK on 2023/10/27.
 //
 
 import Foundation
 
-class MoviePickerViewModel: ObservableObject {
+class TimeTableModalModel: ObservableObject {
+//    static let dateFormatter: DateFormatter = {
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "YYYY.MM.dd (E)"
+//        
+//        return formatter
+//    }()
     
     @Published var movieTitles: [String] = [] // 영화 제목들을 저장할 배열
     @Published var movieTimes: [String] = [] // 영화 시간들을 저장할 배열
@@ -15,9 +21,17 @@ class MoviePickerViewModel: ObservableObject {
     @Published var count: Int = 0
     private let theatermodel = TheaterManager()
     
-    func getMovieDetail(date: String) {
+    func currentDateFormatter() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let currentDate = dateFormatter.string(from: Date())
+        return currentDate
+    }
+    
+    
+    func getMovieDetail() {
         DispatchQueue.main.async {
-            self.theatermodel.fetch(cgid: "FE8EF4D2-F22D-4802-A39A-D58F23A29C1E", ssid: "", tokn: "", BrandCd: "indieart", CinemaCd: "000057", PlaySDT: date) { theaters in
+            self.theatermodel.fetch(cgid: "FE8EF4D2-F22D-4802-A39A-D58F23A29C1E", ssid: "", tokn: "", BrandCd: "indieart", CinemaCd: "000057", PlaySDT: self.currentDateFormatter()) { theaters in
                 DispatchQueue.main.async {
                     do {
                         guard let theaters = theaters else {
@@ -43,8 +57,6 @@ class MoviePickerViewModel: ObservableObject {
             }
         }
     }
-    
-    // 오늘 날짜를 받아서 오늘 영화들만 보여주는 함수 구현
     
     func updateCount() {
         DispatchQueue.main.async {

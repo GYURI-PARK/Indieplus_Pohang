@@ -1,5 +1,5 @@
 //
-//  TicketingWebView.swift
+//  LoadingWebView.swift
 //  Indieplus_Pohang
 //
 //  Created by GYURI PARK on 2023/08/16.
@@ -9,9 +9,9 @@ import SwiftUI
 import Combine
 import WebKit
 
-struct TicketingWebView: UIViewRepresentable {
+struct LoadingWebView: UIViewRepresentable {
     var urlToLoad: String
-    @ObservedObject var viewModel: TicketingWebViewModel
+    @ObservedObject var viewModel: LoadingWebViewModel
     
     func makeUIView(context: Context) -> WKWebView {
         let webView = WKWebView()
