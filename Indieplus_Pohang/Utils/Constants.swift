@@ -21,7 +21,7 @@ struct Constants {
         case CGSize(width: 390, height: 844): // 14, 13 Pro, 13, 12 Pro, 12
             return 350.0
         case CGSize(width: 375, height: 667): // SE
-            return 250.0
+            return 265.0
         case CGSize(width: 375, height: 812): // 13 Mini, 12 Mini, 11 Pro, XS
             return 330.0
         case CGSize(width: 375, height: 780): // 13 Mini, 12 Mini
