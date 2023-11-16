@@ -28,10 +28,15 @@ struct PosterView: View {
                                 .frame(width: 186, height: 255)
                                 .cornerRadius(15)
                         } placeholder: {
-                            Rectangle()
-                                .foregroundColor(.gray)
-                                .frame(width: 186, height: 255)
-                                .cornerRadius(15)
+                            ZStack {
+                                Rectangle()
+                                    .foregroundStyle(Color(0xCECECE))
+                                    .frame(width: 186, height: 255)
+                                    .cornerRadius(15)
+                                
+                                ProgressView()
+                                    .foregroundStyle(Color.main)
+                            }
                         }
                         Spacer(minLength: 15)
                     }

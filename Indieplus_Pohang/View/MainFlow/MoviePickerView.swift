@@ -15,9 +15,6 @@ struct MoviePickerView: View {
     @ObservedObject var vm: LoadingWebViewModel
 
     @State private var count = 0
-//    @State private var movieTitles: [String] = []
-//    @State private var movieTimes: [String] = []
-//    @State private var movieEngTitles: [String] = []
 
     func presentingDifferentTime(index: Int) -> String {
         if index == 0 {
@@ -36,7 +33,7 @@ struct MoviePickerView: View {
         VStack(spacing: 30){
             if moviemodel.count == 0 {
                 Text("상영 시간표 준비 중입니다.")
-                    .foregroundColor(.white)
+                    .foregroundStyle(Color.white)
                     .padding(20)
             }
             else {
@@ -45,7 +42,7 @@ struct MoviePickerView: View {
                         VStack{
                             Circle()
                                 .frame(width: 15)
-                                .foregroundColor(.clear)
+                                .foregroundStyle(Color.clear)
                                 .overlay(
                                     Circle()
                                         .strokeBorder(Color.main)
@@ -53,7 +50,7 @@ struct MoviePickerView: View {
                             
                             Rectangle()
                                 .frame(width: 1, height: 60)
-                                .foregroundColor(Color.main)
+                                .foregroundStyle(Color.main)
                         }
                         
                         MovieSummaryInfoView(selectedTime: presentingDifferentTime(index: index), theatermodel: theatermodel, moviemodel: moviemodel, vm: vm, index: index)
@@ -66,25 +63,6 @@ struct MoviePickerView: View {
                     }
                 }
             }
-//            .onReceive(moviemodel.$movieTitles) { _ in
-//                DispatchQueue.main.async {
-//                    self.movieTitles = moviemodel.movieTitles
-//                    self.count = moviemodel.count
-//                    self.movieTimes = moviemodel.movieTimes
-//                    self.movieEngTitles = moviemodel.movieEngTitles
-//                }
-//            }
-//            .onAppear {
-//                let today = Date()
-//                let dateFormatter = DateFormatter()
-//                dateFormatter.dateFormat = "yyyy-MM-dd"
-//                let dateString = dateFormatter.string(from: today)
-//                moviemodel.getMovieDetail(date: dateString)
-//                DispatchQueue.main.async {
-//                    moviemodel.updateMovieTitles(newTitles: moviemodel.movieTitles)
-//                }
-//
-//            }
         }
     }
 }
@@ -104,13 +82,13 @@ struct MovieSummaryInfoView: View {
             
             if index < moviemodel.movieTimes.count {
                 Text("\(moviemodel.movieTimes[index])")
-                    .foregroundColor(.white)
+                    .foregroundStyle(Color.white)
                     .font(.system(size: 18, weight: .semibold))
                     .padding(.horizontal, 5)
                     .frame(width: 60)
             } else {
                 Text("Invalid Index")
-                    .foregroundColor(.white)
+                    .foregroundStyle(Color.white)
                     .font(.system(size: 18, weight: .semibold))
                     .padding(.horizontal, 5)
                     .frame(width: 60)
@@ -124,12 +102,12 @@ struct MovieSummaryInfoView: View {
                         Text("\(moviemodel.movieTitles[index])")
                             .lineLimit(1)
                             .font(.system(size: 18, weight: .medium))
-                            .foregroundColor(.white)
+                            .foregroundStyle(Color.white)
                             .frame(width: 150, alignment: .leading)
                     } else {
                         Text("Invalid Index")
                             .font(.system(size: 18, weight: .medium))
-                            .foregroundColor(.white)
+                            .foregroundStyle(Color.white)
                             .frame(width: 150, alignment: .leading)
                     }
                 }
@@ -138,27 +116,20 @@ struct MovieSummaryInfoView: View {
                         .lineLimit(1)
                         .font(.system(size: 12))
                         .opacity(0.7)
-                        .foregroundColor(.white)
+                        .foregroundStyle(Color.white)
                         .frame(width: 150, alignment: .leading)
                 } else {
                     Text("Invalid Index")
                         .font(.system(size: 12))
                         .opacity(0.7)
-                        .foregroundColor(.white)
+                        .foregroundStyle(Color.white)
                         .frame(width: 150, alignment: .leading)
                 }
             }
-//            Button(action: {
-//                // 예매 버튼 클릭 시 실행될 동작
-//            }) {
-//                Text("예매\n하기")
-//                    .foregroundColor(.white)
-//                    .frame(width: 70)
-//                    .padding(.leading, 10)
-//            }
+            
             NavigationLink(destination: LoadingWebView(urlToLoad: "https://www.dtryx.com/cinema/main.do?cgid=FE8EF4D2-F22D-4802-A39A-D58F23A29C1E&BrandCd=indieart&CinemaCd=000057", viewModel: vm)) {
                 Text("예매\n하기")
-                    .foregroundColor(.white)
+                    .foregroundStyle(Color.white)
                     .frame(width: 70)
                     .padding(.leading, 10)
             }

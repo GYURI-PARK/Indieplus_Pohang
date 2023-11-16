@@ -16,12 +16,12 @@ struct FastTicketingView: View {
             ZStack {
                 Rectangle()
                     .frame(width: 100, height: 40)
-                    .foregroundColor(Color.main)
+                    .foregroundStyle(Color.main)
                     .cornerRadius(10, corners: [.bottomLeft, .topLeft])
                 
                 Text("빠른 예매")
                     .font(.system(size: 17, weight: .bold))
-                    .foregroundColor(.black)
+                    .foregroundStyle(Color.black)
             }
         }
         .offset(x: 151, y: 318)

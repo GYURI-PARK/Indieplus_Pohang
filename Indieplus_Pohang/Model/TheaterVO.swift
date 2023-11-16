@@ -20,11 +20,6 @@ struct TheaterVO: Codable {
     let MovieNmEng: String?
     let TotalSeatCnt, RemainSeatCnt: String
     let ShowSeq: String // 오늘 상영 순서
-    
-//    var theaterFullName: String = "" //로컬에서 가져온 상영관 이름
-//    var distance:Double?
-//    var theaterDetail:[String:String]?
-//    var score:Double?
 }
 
 

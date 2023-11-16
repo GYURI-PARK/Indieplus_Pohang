@@ -14,7 +14,6 @@
 		C12630B02A48B75600F98E2A /* PosterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12630AF2A48B75600F98E2A /* PosterViewModel.swift */; };
 		C157600E2AEAEA590089FFE5 /* TimeTableModalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157600D2AEAEA590089FFE5 /* TimeTableModalModel.swift */; };
 		C15760122AED75D00089FFE5 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15760112AED75D00089FFE5 /* SplashView.swift */; };
-		C186D12F2A529E080063E6CE /* MovieShowtimeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C186D12E2A529E080063E6CE /* MovieShowtimeInfo.swift */; };
 		C186D1312A5560570063E6CE /* MoviePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C186D1302A5560570063E6CE /* MoviePickerViewModel.swift */; };
 		C19AFB002AE6AA410037A5F5 /* TimeTableModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19AFAFF2AE6AA410037A5F5 /* TimeTableModal.swift */; };
 		C19AFB0C2AE6B0EA0037A5F5 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = C19AFB032AE6B0E90037A5F5 /* Pretendard-ExtraLight.otf */; };
@@ -33,7 +32,6 @@
 		C1B7F7852A4972B5001F1BF9 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BED6872A3C2741007B6A5C /* Color+Extension.swift */; };
 		C1B7F7862A4972B7001F1BF9 /* Shape+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BED68F2A3D835A007B6A5C /* Shape+Extension.swift */; };
 		C1B7F7982A4D6D93001F1BF9 /* TheaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B7F7972A4D6D93001F1BF9 /* TheaterView.swift */; };
-		C1B7F79A2A4EB923001F1BF9 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B7F7992A4EB923001F1BF9 /* MovieDetailView.swift */; };
 		C1B7F79C2A4EE1B4001F1BF9 /* TheaterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B7F79B2A4EE1B4001F1BF9 /* TheaterManager.swift */; };
 		C1B7F79E2A4EF1F4001F1BF9 /* TheaterVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B7F79D2A4EF1F4001F1BF9 /* TheaterVO.swift */; };
 		C1BED6732A3AF699007B6A5C /* Indieplus_PohangApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BED6722A3AF699007B6A5C /* Indieplus_PohangApp.swift */; };
@@ -59,7 +57,6 @@
 		C12630AF2A48B75600F98E2A /* PosterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterViewModel.swift; sourceTree = "<group>"; };
 		C157600D2AEAEA590089FFE5 /* TimeTableModalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableModalModel.swift; sourceTree = "<group>"; tabWidth = 3; };
 		C15760112AED75D00089FFE5 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
-		C186D12E2A529E080063E6CE /* MovieShowtimeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieShowtimeInfo.swift; sourceTree = "<group>"; };
 		C186D1302A5560570063E6CE /* MoviePickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePickerViewModel.swift; sourceTree = "<group>"; };
 		C19AFAFF2AE6AA410037A5F5 /* TimeTableModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableModal.swift; sourceTree = "<group>"; };
 		C19AFB032AE6B0E90037A5F5 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
@@ -74,7 +71,6 @@
 		C19AFB152AE6B0FB0037A5F5 /* FontsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsManager.swift; sourceTree = "<group>"; };
 		C1B130922AA0F20F00D39345 /* DailyReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReviewViewModel.swift; sourceTree = "<group>"; };
 		C1B7F7972A4D6D93001F1BF9 /* TheaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterView.swift; sourceTree = "<group>"; };
-		C1B7F7992A4EB923001F1BF9 /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		C1B7F79B2A4EE1B4001F1BF9 /* TheaterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterManager.swift; sourceTree = "<group>"; };
 		C1B7F79D2A4EF1F4001F1BF9 /* TheaterVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterVO.swift; sourceTree = "<group>"; };
 		C1BED66F2A3AF699007B6A5C /* Indieplus_Pohang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Indieplus_Pohang.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,7 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				C1BED6972A3E268C007B6A5C /* PosterView.swift */,
-				C1B7F7992A4EB923001F1BF9 /* MovieDetailView.swift */,
 			);
 			path = Poster;
 			sourceTree = "<group>";
@@ -244,7 +239,6 @@
 			isa = PBXGroup;
 			children = (
 				C1B7F79D2A4EF1F4001F1BF9 /* TheaterVO.swift */,
-				C186D12E2A529E080063E6CE /* MovieShowtimeInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -398,13 +392,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1B7F79A2A4EB923001F1BF9 /* MovieDetailView.swift in Sources */,
 				C1B130932AA0F20F00D39345 /* DailyReviewViewModel.swift in Sources */,
 				C1B7F7842A497299001F1BF9 /* PosterView.swift in Sources */,
 				C19AFB002AE6AA410037A5F5 /* TimeTableModal.swift in Sources */,
 				C1BED6922A3DCBB1007B6A5C /* BottomBarView.swift in Sources */,
 				C1B7F7982A4D6D93001F1BF9 /* TheaterView.swift in Sources */,
-				C186D12F2A529E080063E6CE /* MovieShowtimeInfo.swift in Sources */,
 				C1B7F7832A497294001F1BF9 /* MoviePickerView.swift in Sources */,
 				C15760122AED75D00089FFE5 /* SplashView.swift in Sources */,
 				C1BED6752A3AF699007B6A5C /* ContentView.swift in Sources */,
