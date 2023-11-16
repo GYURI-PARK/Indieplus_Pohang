@@ -15,6 +15,7 @@
 		C157600E2AEAEA590089FFE5 /* TimeTableModalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157600D2AEAEA590089FFE5 /* TimeTableModalModel.swift */; };
 		C15760122AED75D00089FFE5 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15760112AED75D00089FFE5 /* SplashView.swift */; };
 		C186D1312A5560570063E6CE /* MoviePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C186D1302A5560570063E6CE /* MoviePickerViewModel.swift */; };
+		C19604222B0656D000432FC0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19604212B0656D000432FC0 /* Constants.swift */; };
 		C19AFB002AE6AA410037A5F5 /* TimeTableModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19AFAFF2AE6AA410037A5F5 /* TimeTableModal.swift */; };
 		C19AFB0C2AE6B0EA0037A5F5 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = C19AFB032AE6B0E90037A5F5 /* Pretendard-ExtraLight.otf */; };
 		C19AFB0D2AE6B0EA0037A5F5 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = C19AFB042AE6B0E90037A5F5 /* Pretendard-Black.otf */; };
@@ -58,6 +59,7 @@
 		C157600D2AEAEA590089FFE5 /* TimeTableModalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableModalModel.swift; sourceTree = "<group>"; tabWidth = 3; };
 		C15760112AED75D00089FFE5 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		C186D1302A5560570063E6CE /* MoviePickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePickerViewModel.swift; sourceTree = "<group>"; };
+		C19604212B0656D000432FC0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C19AFAFF2AE6AA410037A5F5 /* TimeTableModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableModal.swift; sourceTree = "<group>"; };
 		C19AFB032AE6B0E90037A5F5 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
 		C19AFB042AE6B0E90037A5F5 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
@@ -147,6 +149,14 @@
 			path = SubPage;
 			sourceTree = "<group>";
 		};
+		C19604202B0656AD00432FC0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C19604212B0656D000432FC0 /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		C19AFB012AE6B0500037A5F5 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +203,7 @@
 		C1BED6712A3AF699007B6A5C /* Indieplus_Pohang */ = {
 			isa = PBXGroup;
 			children = (
+				C19604202B0656AD00432FC0 /* Utils */,
 				C19AFB012AE6B0500037A5F5 /* DesignSystem */,
 				C1217ECB2A8C52A6005C4868 /* Indieplus-Pohang-Info.plist */,
 				C1217EC52A81ED9D005C4868 /* ViewModel */,
@@ -399,6 +410,7 @@
 				C1B7F7982A4D6D93001F1BF9 /* TheaterView.swift in Sources */,
 				C1B7F7832A497294001F1BF9 /* MoviePickerView.swift in Sources */,
 				C15760122AED75D00089FFE5 /* SplashView.swift in Sources */,
+				C19604222B0656D000432FC0 /* Constants.swift in Sources */,
 				C1BED6752A3AF699007B6A5C /* ContentView.swift in Sources */,
 				C1217ECF2A8C5678005C4868 /* LoadingWebViewModel.swift in Sources */,
 				C186D1312A5560570063E6CE /* MoviePickerViewModel.swift in Sources */,
