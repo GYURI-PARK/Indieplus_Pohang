@@ -15,9 +15,6 @@ struct MoviePickerView: View {
     @ObservedObject var vm: LoadingWebViewModel
 
     @State private var count = 0
-//    @State private var movieTitles: [String] = []
-//    @State private var movieTimes: [String] = []
-//    @State private var movieEngTitles: [String] = []
 
     func presentingDifferentTime(index: Int) -> String {
         if index == 0 {
@@ -66,25 +63,6 @@ struct MoviePickerView: View {
                     }
                 }
             }
-//            .onReceive(moviemodel.$movieTitles) { _ in
-//                DispatchQueue.main.async {
-//                    self.movieTitles = moviemodel.movieTitles
-//                    self.count = moviemodel.count
-//                    self.movieTimes = moviemodel.movieTimes
-//                    self.movieEngTitles = moviemodel.movieEngTitles
-//                }
-//            }
-//            .onAppear {
-//                let today = Date()
-//                let dateFormatter = DateFormatter()
-//                dateFormatter.dateFormat = "yyyy-MM-dd"
-//                let dateString = dateFormatter.string(from: today)
-//                moviemodel.getMovieDetail(date: dateString)
-//                DispatchQueue.main.async {
-//                    moviemodel.updateMovieTitles(newTitles: moviemodel.movieTitles)
-//                }
-//
-//            }
         }
     }
 }
@@ -148,14 +126,7 @@ struct MovieSummaryInfoView: View {
                         .frame(width: 150, alignment: .leading)
                 }
             }
-//            Button(action: {
-//                // 예매 버튼 클릭 시 실행될 동작
-//            }) {
-//                Text("예매\n하기")
-//                    .foregroundColor(.white)
-//                    .frame(width: 70)
-//                    .padding(.leading, 10)
-//            }
+            
             NavigationLink(destination: LoadingWebView(urlToLoad: "https://www.dtryx.com/cinema/main.do?cgid=FE8EF4D2-F22D-4802-A39A-D58F23A29C1E&BrandCd=indieart&CinemaCd=000057", viewModel: vm)) {
                 Text("예매\n하기")
                     .foregroundColor(.white)

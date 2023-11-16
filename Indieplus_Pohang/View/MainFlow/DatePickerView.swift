@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DatePickerView: View {
-//    @State var selectedIndex: Int = 0
+    
     @ObservedObject var theatermodel: TheaterManager
     @ObservedObject var moviemodel: MoviePickerViewModel
     @ObservedObject var datemodel: DatePickerViewModel
@@ -78,16 +78,5 @@ struct DateView: View {
                 Spacer(minLength: 10)
             }
         }
-        .onAppear {
-            selectedDate = datemodel.dateToList(date: today)
-            moviemodel.getMovieDetail(date: selectedDate)
-            moviemodel.updateCount()
-        }
-//        .onChange(of: selectedDate) {newValue in
-//
-//            movieTitles = moviemodel.movieTitles
-//            count = moviemodel.count
-//
-//        }
     }
 }
