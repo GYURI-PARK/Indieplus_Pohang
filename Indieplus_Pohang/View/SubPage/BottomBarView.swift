@@ -30,7 +30,7 @@ struct BottomBarView: View {
         ZStack {
             Rectangle()
                 .frame(width: 400, height: 98)
-                .foregroundColor(Color.main)
+                .foregroundStyle(Color.main)
                 .ignoresSafeArea()
             
             NavigationLink {
@@ -44,12 +44,8 @@ struct BottomBarView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 36)
-                    //                            .padding(.top, 3)
-                    
-                    //                        Text("영화관")
-                    //                            .font(.system(size: 12, weight: .bold))
                 }
-                .foregroundColor(.black)
+                .foregroundStyle(.black)
             }
             .offset(x: -130, y: -20)
             
@@ -59,12 +55,8 @@ struct BottomBarView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 28)
-                    //                            .padding(.top, 3)
-                    
-                    //                        Text("마이")
-                    //                            .font(.system(size: 12, weight: .bold))
                 }
-                .foregroundColor(.black)
+                .foregroundStyle(Color.black)
             }
             .offset(x: 130, y: -20)
             
@@ -74,7 +66,7 @@ struct BottomBarView: View {
             }) {
                 ZStack{
                     Circle()
-                        .foregroundColor(.black)
+                        .foregroundStyle(.black)
                         .frame(width: 60)
                         .overlay(Circle()
                             .strokeBorder(Color.main, lineWidth: 1.3)
@@ -84,7 +76,7 @@ struct BottomBarView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 35, height: 28)
-                        .foregroundColor(.main)
+                        .foregroundStyle(Color.main)
                     
                 }
             }

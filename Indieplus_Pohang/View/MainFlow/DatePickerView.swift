@@ -57,7 +57,7 @@ struct DateView: View {
                         Rectangle()
                             .frame(width: 60, height: 60)
                             .cornerRadius(10)
-                            .foregroundColor(index == selectedIndex ? .main : .clear)
+                            .foregroundStyle(index == selectedIndex ? Color.main : Color.clear)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 10)
                                     .strokeBorder(Color.main)
@@ -67,11 +67,11 @@ struct DateView: View {
                         VStack(spacing: 2){
                             Text(datemodel.dateToString(date: date))
                                 .font(.calendar1)
-                                .foregroundColor(index == selectedIndex ? .black : Color.main)
+                                .foregroundStyle(index == selectedIndex ? Color.black : Color.main)
                             
                             Text(datemodel.dayToString(date: date))
                                 .font(.calendar2)
-                                .foregroundColor(index == selectedIndex ? .black : Color.main)
+                                .foregroundStyle(index == selectedIndex ? Color.black : Color.main)
                         }
                     }
                 }
