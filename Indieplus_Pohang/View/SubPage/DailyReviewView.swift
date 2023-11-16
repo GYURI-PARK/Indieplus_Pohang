@@ -13,16 +13,6 @@ struct DailyReviewView: View {
     
     var body: some View {
         VStack(alignment: .leading){
-            //            Text("Take It Easy")
-            //                .foregroundColor(.white)
-            //                .font(.subhead3_1)
-            //                .padding(.bottom, 10)
-            //
-            //            ZStack{
-            //                RoundedRectangle(cornerRadius: 15)
-            //                    .foregroundColor(Color.main)
-            //                    .opacity(0.5)
-            //                    .frame(width: 330, height: 100)
             
             RandomReviewView(vm: vm)
                 .frame(width: 310)
@@ -30,10 +20,9 @@ struct DailyReviewView: View {
                 .padding(.vertical, 10)
                 .background (
                     RoundedRectangle(cornerRadius: 15)
-                        .foregroundColor(Color.main)
+                        .foregroundStyle(Color.main)
                         .opacity(0.5)
                 )
-            //            }
         }
     }
 }
@@ -52,12 +41,12 @@ struct RandomReviewView: View {
             Text(review)
                 .font(.body3)
                 .lineSpacing(10)
-                .foregroundColor(.white)
+                .foregroundStyle(Color.white)
                 .multilineTextAlignment(.center)
                 .padding(8)
                 
             Text(movie)
-                .foregroundColor(Color(0xCECECE))
+                .foregroundStyle(Color(0xCECECE))
                 .font(.subhead1)
                 .padding(.bottom, 5)
         }
