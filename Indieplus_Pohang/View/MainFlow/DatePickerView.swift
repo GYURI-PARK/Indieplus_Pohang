@@ -37,6 +37,7 @@ struct DateView: View {
     
     @State private var count = 0
     @State private var movieTitles: [String] = []
+    @State private var isFirstTime = false
     
     var body: some View {
         ForEach(0..<10) { index in
@@ -77,6 +78,15 @@ struct DateView: View {
                 }
                 Spacer(minLength: 10)
             }
+        }
+        .onAppear {
+            if !isFirstTime {
+                selectedDate = datemodel.dateToList(date: today)
+                moviemodel.getMovieDetail(date: selectedDate)
+                moviemodel.updateCount()
+            }
+            
+            isFirstTime = true
         }
     }
 }
