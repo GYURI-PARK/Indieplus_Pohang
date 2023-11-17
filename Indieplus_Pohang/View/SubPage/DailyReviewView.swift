@@ -34,6 +34,7 @@ struct RandomReviewView: View {
     @State private var index: Int = 0
     @State private var movie: String = ReviewDataModel.instance.movies[0]
 
+    @State private var isTempState = false
     
     var body: some View {
         
