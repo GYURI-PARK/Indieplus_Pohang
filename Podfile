@@ -7,4 +7,8 @@ target 'Indieplus_Pohang' do
 pod 'SwiftSoup'
   # Pods for Indieplus_Pohang
 
+target 'TimetableWidget' do
+  use_frameworks!
+  pod 'SwiftSoup'
+  
 end
